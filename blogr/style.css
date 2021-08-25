@@ -285,6 +285,9 @@ footer a {
 	margin: 10%;
 	color: var(--gradient-light-red);
 }
+.attribution a {
+	text-decoration: underline;
+}
 
 @media screen and (min-width: 700px) {
 	header {
