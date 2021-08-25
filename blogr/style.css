@@ -28,7 +28,7 @@
 body {
 	background-color: white;
 	font-family: var(--overpass);
-	min-width: 375px;
+	/* min-width: 375px; */
 	padding: 0;
 }
 
@@ -204,6 +204,14 @@ main {
 	color: var(--gradient-light-red);
 	background-color: white;
 	margin-left: 7%;
+}
+
+@media screen and (max-width: 375px) {
+	.start,
+	.learn {
+		display: block;
+		margin: 0 auto 5%;
+	}
 }
 
 h2,
