@@ -1,0 +1,562 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap");
+
+:root {
+	--light-red: hsl(356, 100%, 66%);
+	--very-light-red: hsl(355, 100%, 74%);
+	--very-dark-blue: hsl(208, 49%, 24%);
+	--grayish-blue: hsl(240, 2%, 79%);
+	--dark-grayish-blue: hsl(207, 13%, 34%);
+	--dark-black-blue: hsl(240, 10%, 16%);
+
+	/* ###gradient */
+	--gradient-very-light-red: hsl(13, 100%, 72%);
+	--gradient-light-red: hsl(353, 100%, 62%);
+
+	/* body */
+	--body-dark-gray-blue: hsl(237, 17%, 21%);
+	--body-desaturated-blue: hsl(237, 23%, 32%);
+
+	/* font */
+	--overpass: "Overpass", sans-serif;
+	--ubuntu: "Ubuntu", sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: white;
+	font-family: var(--overpass);
+	min-width: 375px;
+	padding: 0;
+}
+
+header {
+	background: var(--gradient-light-red);
+	background: linear-gradient(
+		to bottom right,
+		hsl(13, 100%, 72%),
+		hsl(353, 100%, 62%)
+	);
+	background: -moz-linear-gradient(
+		bottom right,
+		hsl(13, 100%, 72%),
+		hsl(353, 100%, 62%)
+	);
+	background: -webkit-linear-gradient(
+		to bottom right,
+		hsl(13, 100%, 72%),
+		hsl(353, 100%, 62%)
+	);
+	background: -o-linear-gradient(
+		to bottom right,
+		hsl(13, 100%, 72%),
+		hsl(353, 100%, 62%)
+	);
+	border-bottom-left-radius: 70px;
+	padding: 7%;
+	padding-top: 20%;
+	height: 90vh;
+	/* width: 375px; */
+	max-width: 100%;
+	min-height: 480px;
+	max-height: 550px;
+}
+
+header h1 {
+	margin: 5%;
+	margin-top: 20%;
+	width: 90%;
+}
+header p {
+	font-weight: 300;
+	opacity: 0.7;
+	text-align: center;
+	width: 80%;
+	margin: 5% 10%;
+}
+header hr {
+	margin: 10%;
+	width: 90%;
+	background-color: rgba(114, 112, 112, 0.385);
+}
+header a {
+	font-weight: 600;
+	text-decoration: none;
+}
+
+nav {
+	background: white;
+	padding: 5%;
+	height: fit-content;
+	width: 85%;
+	max-height: 0;
+	border-radius: 2%;
+	box-shadow: 0px 5px 50px rgb(0 0 0 / 28%);
+	position: absolute;
+	z-index: 9999999;
+	display: none;
+	transition: max-height 0.2s ease-out;
+}
+.nav-open {
+	text-align: center;
+	display: block;
+}
+
+nav > button {
+	display: block;
+	width: 100%;
+	height: 3rem;
+	border: none;
+	background: white;
+	font-weight: 600;
+}
+
+.show-accordion {
+	display: block;
+	background-color: rgba(0, 0, 0, 0.042);
+	text-align: center;
+}
+
+.accordion:after {
+	content: "\02C5";
+	padding-left: 5%;
+	color: var(--gradient-light-red);
+}
+.accordion-open:after {
+	content: "\02C4";
+	padding-left: 5%;
+	color: var(--gradient-light-red);
+}
+
+nav ul {
+	list-style: none;
+	display: none;
+	margin: 0px;
+	padding: 10px;
+}
+nav a {
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	margin: 5%;
+	color: var(--body-dark-gray-blue);
+}
+
+.burger {
+	width: 100%;
+	margin-bottom: 20%;
+	font-size: 1.5rem;
+	font-weight: 300;
+}
+
+.burger {
+	margin-bottom: 5%;
+}
+
+#menu-icon {
+	float: right;
+	margin-top: 3%;
+	transition: height 0.2s ease-out;
+}
+
+header h1,
+header p,
+header a {
+	color: white;
+	text-align: center;
+}
+nav a {
+	color: var(--body-dark-gray-blue);
+}
+
+.buttons {
+	color: white;
+	height: 40px;
+	margin-left: 20%;
+	width: 60%;
+	background: var(--light-red);
+	background: linear-gradient(
+		to bottom right,
+		hsl(355, 100%, 74%),
+		hsl(356, 100%, 66%)
+	);
+	border-radius: 20px;
+}
+
+main {
+	/* width: 375px; */
+	max-width: 100%;
+}
+
+.start,
+.learn {
+	display: inline-block;
+	width: fit-content;
+	padding: 4%;
+	margin: 2%;
+	height: 50px;
+	border: 2px solid white;
+	border-radius: 25px;
+}
+.start {
+	color: var(--gradient-light-red);
+	background-color: white;
+	margin-left: 7%;
+}
+
+h2,
+p {
+	text-align: center;
+}
+
+#one {
+	margin-top: 20%;
+}
+
+section h2 {
+	font-weight: 700;
+	font-size: 2rem;
+	margin-bottom: 10%;
+	margin: 15% 15% 4%;
+	width: 70%;
+	text-align: center;
+}
+section img {
+	width: 100%;
+}
+section p {
+	padding: 0% 8% 0%;
+	line-height: 150%;
+}
+.phones {
+	margin-top: -100%;
+}
+
+#two {
+	margin-top: 57%;
+	background-color: var(--body-desaturated-blue);
+	color: white;
+	/* height: 85vh;
+	min-height: 540px; */
+	padding: 45% 4% 30%;
+	border-radius: 0 100px 0 100px;
+}
+#two h2 {
+	margin-top: 0;
+}
+#two p {
+	font-weight: 300;
+}
+
+#three {
+	margin-top: 10%;
+}
+
+#three img {
+	margin-bottom: -5%;
+}
+
+footer {
+	/* width: 375px; */
+	max-width: 100%;
+	margin-top: 15%;
+	background-color: var(--dark-black-blue);
+	color: white;
+	text-align: center;
+	padding-top: 16%;
+	padding-bottom: 15%;
+	border-top-right-radius: 90px;
+}
+footer h3 {
+	margin-top: 10%;
+}
+
+footer a {
+	display: block;
+	text-decoration: none;
+	color: white;
+	text-align: center;
+	margin: 4px;
+}
+
+.attribution {
+	margin: 10%;
+	color: var(--gradient-light-red);
+}
+
+@media screen and (min-width: 700px) {
+	header {
+		padding: 7%;
+		height: 80%;
+	}
+	.burger {
+		width: 10%;
+		margin: 2%;
+		display: inline-block;
+	}
+	#menu-icon {
+		display: none;
+	}
+	nav {
+		display: inline-block;
+		background: none;
+		padding: 0;
+		height: fit-content;
+		width: 75%;
+		box-shadow: none;
+		position: absolute;
+	}
+
+	.accordion {
+		display: inline-block;
+		color: white;
+		background: none;
+		margin-left: 0.5%;
+		width: 10%;
+		cursor: pointer;
+	}
+
+	nav a,
+	.buttons {
+		width: 10%;
+		display: inline-block;
+		margin: 2% 0 2%;
+		color: white;
+	}
+
+	.login {
+		margin-left: 28%;
+	}
+	.buttons {
+		color: var(--gradient-light-red);
+		background: white;
+		cursor: pointer;
+	}
+	.buttons:hover {
+		color: white;
+		background: var(--light-red);
+	}
+
+	nav hr {
+		display: none;
+	}
+
+	header h1 {
+		margin: 7% auto 0%;
+		font-size: 2.7rem;
+	}
+
+	header p {
+		margin: 1.5% auto;
+		font-size: 0.9rem;
+	}
+	header a {
+		cursor: pointer;
+	}
+
+	.start,
+	.learn {
+		display: inline-block;
+		width: fit-content;
+		text-align: center;
+		padding: 1.5%;
+		margin: 2% 0.5%;
+		height: 50px;
+		font-size: 0.9rem;
+		border: 2px solid white;
+		border-radius: 25px;
+	}
+	.start {
+		margin-left: 36%;
+	}
+	.start:hover {
+		background: var(--light-red);
+		color: white;
+		border: none;
+	}
+	.learn:hover {
+		background: white;
+		color: var(--light-red);
+	}
+
+	.accordion:after {
+		content: "\02C5";
+		padding-left: 5%;
+		color: white;
+	}
+	.accordion-open:after {
+		content: "\02C4";
+		padding-left: 5%;
+		color: white;
+	}
+
+	.show-accordion {
+		display: block;
+		position: absolute;
+		top: 85%;
+		width: 13%;
+		background-color: white;
+		text-align: center;
+	}
+	#accordion-2 + ul {
+		right: 75%;
+	}
+	#accordion-3 + ul {
+		right: 67%;
+	}
+	nav > ul > li > a {
+		color: black;
+		margin-left: -70%;
+	}
+
+	/*body*/
+	main {
+		overflow: hidden;
+	}
+
+	#one {
+		margin: 0 auto;
+		margin-top: 5%;
+		overflow: hidden;
+	}
+
+	#one,
+	#two,
+	#three {
+		display: flex;
+		flex-wrap: wrap;
+		position: relative;
+	}
+
+	section h2,
+	section p {
+		text-align: left;
+		display: inline-block;
+		padding-left: 0;
+	}
+
+	#one > h2 {
+		text-align: center;
+		width: 100%;
+		margin: 5% 0;
+		font-size: 2.5rem;
+		overflow: hidden;
+	}
+	#one img {
+		order: 2;
+		width: 55%;
+		position: absolute;
+		left: 55%;
+		padding-top: 5%;
+	}
+
+	section article {
+		width: 50%;
+		padding: 0 0% 0 10%;
+	}
+	article h2 {
+		margin: 0;
+		width: 100%;
+		font-size: 1.7rem;
+		padding-top: 6%;
+	}
+	article p {
+		margin-bottom: 5%;
+	}
+
+	#two {
+		height: 65vh;
+		padding: 0 7% 0;
+		margin-top: 20%;
+	}
+	.phones {
+		width: 50%;
+		margin-top: -5%;
+	}
+	#two article {
+		padding: 10% 5% 5%;
+	}
+	#two article > h2 {
+		font-size: 2rem;
+	}
+
+	#three img {
+		width: 70%;
+		position: absolute;
+		left: -17%;
+	}
+	#three article {
+		padding: 10% 10% 0 0%;
+		position: relative;
+		left: 50%;
+	}
+
+	footer {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 5%;
+	}
+
+	.footer-burger {
+		width: 25%;
+	}
+	.footer-column {
+		width: 20%;
+	}
+	.attribution {
+		width: 100%;
+		margin: 5% 0 0;
+	}
+}
+
+/* # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Light red (CTA text): hsl(356, 100%, 66%)
+- Very light red (CTA hover background): hsl(355, 100%, 74%)
+- Very dark blue (headings): hsl(208, 49%, 24%)
+
+### Neutral
+
+- White (text): hsl(0, 0%, 100%)
+- Grayish blue (footer text): hsl(240, 2%, 79%)
+- Very dark grayish blue (body copy): hsl(207, 13%, 34%)
+- Very dark black blue (footer background): hsl(240, 10%, 16%)
+
+### Gradient
+
+Background gradient - Intro/CTA mobile nav:
+
+- Very light red: hsl(13, 100%, 72%)
+- Light red: hsl(353, 100%, 62%)
+
+Background gradient - body:
+
+- Very dark gray blue: hsl(237, 17%, 21%)
+- Very dark desaturated blue: hsl(237, 23%, 32%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 16px
+
+### Fonts
+
+- Family: [Overpass](https://fonts.google.com/specimen/Overpass?preview.text_type=custom)
+- Weights: 300, 600
+
+- Family: [Ubuntu](https://fonts.google.com/specimen/Ubuntu?preview.text_type=custom)
+- Weights: 400, 500, 700 */
