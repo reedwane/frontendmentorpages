@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+
+  <title> Ridwan's Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
+</head>
+
+<body>
+
+  <main>
+    <img src="images/logo.svg" alt="logo" />
+    <section>
+      <div class="calculator">
+        <div class="bills">
+          <h2>Bill</h2>
+          <input type="text" name="bill" id="bill" value="142.55" />
+        </div>
+
+        <div class="tips">
+          <h2>Select Tip %</h2>
+          <div>
+            <p class="five">5%</p>
+            <p class="ten">10%</p>
+            <p class="fifteen" id="default">15%</p>
+            <p class="twenty-five">25%</p>
+            <p class="fifty">50%</p>
+            <p class="custom" id="cust">
+              <input type="text" name="custom" id="custom" placeholder="Custom" value="" />
+            </p>
+          </div>
+
+
+        </div>
+
+        <div class="people">
+          <h2>Number of People <span class="people-error">Can't be zero</span></h2>
+          <input type="text" name="people" id="people" value="5" />
+        </div>
+
+      </div>
+
+      <div class="results">
+        <div class="amount">
+          <div>
+            <p>Tip Amount<span>/ person</span></p>
+
+            <p class="result-amt" id="tip-amount"></p>
+          </div>
+
+          <div>
+            <p>Total<span>/ person</span></p>
+
+            <p class="result-amt" id="total-amount"></p>
+          </div>
+
+        </div>
+
+        <button id="reset" type="submit">Reset</button>
+      </div>
+    </section>
+
+  </main>
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/reedwane" target="_blank">Abdulkareem Ridwan Gboyega</a>.
+  </div>
+
+  <script src="app.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

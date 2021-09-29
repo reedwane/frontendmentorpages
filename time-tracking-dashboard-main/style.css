@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+:root {
+	--blue: hsl(246, 80%, 60%);
+	--Light-red-work: hsl(15, 100%, 70%);
+	--blue-play: hsl(195, 74%, 62%);
+	--Light-red-study: hsl(348, 100%, 68%);
+	--Lime-green-exercise: hsl(145, 58%, 55%);
+	--Violet-social: hsl(264, 64%, 52%);
+	--Soft-orange-self-care: hsl(43, 84%, 65%);
+	--Very-dark-blue: hsl(226, 43%, 10%);
+	--Dark-blue: hsl(235, 46%, 20%);
+	--Desaturated-blue: hsl(235, 45%, 61%);
+	--Pale-Blue: hsl(236, 100%, 87%);
+	--bright-white: hsl(0, 0%, 100%);
+	--dim-white: hsl(0, 0%, 65%);
+	--medium-white: hsl(0, 0%, 85%);
+}
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--Very-dark-blue);
+	font-family: "Rubik", sans-serif;
+	color: var(--medium-white);
+	padding: 15% 5%;
+	cursor: default;
+}
+
+.heading {
+	background: var(--Dark-blue);
+	border-radius: 20px;
+	margin-bottom: 8%;
+}
+
+.heading img {
+	width: 26%;
+	border-radius: 50%;
+	border: 3px solid white;
+}
+
+.profile {
+	padding: 7.5%;
+	background: hsl(251, 59%, 54%);
+	border-radius: 20px;
+	height: 7.5em;
+	overflow: hidden;
+}
+.profile h1 {
+	display: inline-block;
+	font-weight: 400;
+	font-size: 0.8rem;
+	padding: 2%;
+	position: relative;
+	top: -15px;
+	left: 5px;
+}
+#name {
+	display: block;
+	margin-top: 2%;
+	font-weight: 300;
+	font-size: 1.5rem;
+	color: var(--bright-white);
+}
+
+.timetabs {
+	background: var(--Dark-blue);
+	height: 3.5em;
+	border-radius: 0 0 20px 20px;
+}
+.timetabs p {
+	display: inline-block;
+	color: var(--dim-white);
+	width: 32.5%;
+	text-align: center;
+	padding-top: 5%;
+	cursor: pointer;
+}
+
+/* .timetabs p:hover {
+	color: var(--bright-white);
+} */
+
+.timetabs p:nth-of-type(2) {
+	color: var(--bright-white);
+}
+
+.tasks {
+	padding-top: 11%;
+	border-radius: 25px;
+	margin-bottom: 8%;
+	cursor: pointer;
+}
+
+.task {
+	background: var(--Dark-blue);
+	border-radius: 20px;
+	height: 7em;
+	/* position: relative;
+	top: 2em; */
+	/* margin: 10% 0 0 0; */
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+.task h2,
+.task p {
+	width: 50%;
+	display: inline-block;
+}
+
+.title {
+	font-size: 1em;
+	font-weight: 500;
+	padding: 9% 0 0 8%;
+}
+
+.ellipsis {
+	background: url("images/icon-ellipsis.svg") 85% 50%/12% no-repeat;
+	align-items: right;
+	justify-items: center;
+	cursor: pointer;
+}
+
+.current-duration {
+	font-size: 1.8rem;
+	font-weight: 300;
+	padding: 0 0 0 7%;
+	margin-top: -5%;
+}
+.past {
+	font-size: 0.8em;
+	text-align: right;
+	padding: 0 5% 0 0;
+	margin-top: -2%;
+}
+
+#Work {
+	background: var(--Light-red-work) url("images/icon-work.svg") 92% -15%/24% no-repeat;
+}
+#Play {
+	background: var(--blue-play) url("images/icon-play.svg") 92% -15%/24% no-repeat;
+}
+#Study {
+	background: var(--Light-red-study) url("images/icon-study.svg") 92% -15%/24% no-repeat;
+}
+#Exercise {
+	background: var(--Lime-green-exercise) url("images/icon-exercise.svg") 92% -15%/24%
+		no-repeat;
+}
+#Social {
+	background: var(--Violet-social) url("images/icon-social.svg") 92% -15%/24% no-repeat;
+}
+#Self {
+	background: var(--Soft-orange-self-care) url("images/icon-self-care.svg") 92% -15%/24%
+		no-repeat;
+}
+
+.pre-animation {
+	opacity: 0.2;
+}
+.be-bright {
+	color: var(--bright-white);
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+	margin-top: 15%;
+}
+.attribution a {
+	color: var(--Soft-orange-self-care);
+}
+
+@media screen and (max-width: 375px) {
+	.heading img {
+		width: 20%;
+		margin-top: 5%;
+	}
+	.profile h1 {
+		margin-top: 0;
+		left: 5px;
+		top: -5%;
+	}
+	.timetabs p {
+		width: 32%;
+	}
+}
+
+@media screen and (min-width: 450px) {
+	.profile {
+		height: fit-content;
+	}
+	.profile h1 {
+		font-size: 1.5rem;
+	}
+	#name {
+		font-size: 2.5rem;
+	}
+	.title {
+		font-size: 1em;
+		font-weight: 500;
+		padding: 3% 0 0 8%;
+	}
+
+	.attribution {
+		font-size: 1rem;
+		margin-top: 5%;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	.timetabs p {
+		padding: 3%;
+	}
+	.title {
+		padding: 9% 0 0 8%;
+	}
+	.info {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+	}
+	.info > div {
+		width: 50%;
+		padding: 3%;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	body {
+		padding: 15% 10% 15%;
+	}
+	main {
+		display: grid;
+		grid-template-columns: 25% 73%;
+		column-gap: 1.5%;
+		height: 60vh;
+	}
+	main > div {
+		display: inline-block;
+		height: fit-content;
+	}
+	.heading {
+		width: 100%;
+		height: 100%;
+		margin-bottom: 0;
+	}
+	.heading img {
+		width: 40%;
+		border: 5px solid white;
+	}
+	.profile {
+		height: 70%;
+		padding: 10%;
+	}
+	.profile h1 {
+		padding-top: 25%;
+		font-weight: 300;
+		font-size: 1em;
+	}
+	#name {
+		color: var(--medium-white);
+	}
+	.timetabs {
+		height: 30%;
+		padding: 2%;
+	}
+	.timetabs p {
+		display: block;
+		text-align: left;
+		width: 100%;
+		font-size: 1.2em;
+		padding: 4% 0 4% 10%;
+	}
+
+	.info {
+		height: 60vh;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		/* align-items: self-start; */
+		/* grid-template-columns: auto auto auto; */
+		row-gap: 7%;
+		/* column-gap: 4%; */
+	}
+	.info > div {
+		padding: 0%;
+		width: 30%;
+	}
+	.tasks {
+		margin-top: 0;
+		padding-top: 15%;
+		height: 100%;
+	}
+
+	#Work,
+	#Play,
+	#Study,
+	#Exercise,
+	#Social,
+	#Self {
+		background-position-y: -1%;
+	}
+
+	.task {
+		height: 100%;
+		display: block;
+		padding: 5%;
+	}
+	.title {
+		font-size: 18px;
+		padding: 10% 0px 0 10%;
+	}
+
+	.task h2,
+	.task p {
+		display: inline-block;
+		width: 45%;
+	}
+
+	.task p:last-of-type {
+		text-align: left;
+		padding: 5% 0 0 8%;
+		width: 100%;
+		font-size: 1em;
+		color: var(--dim-white);
+	}
+	.task p:first-of-type {
+		/* text-align: left; */
+		padding: 5% 0 0 8%;
+		width: 50%;
+		background: url(images/icon-ellipsis.svg) 85% 50%/25% no-repeat;
+		/* font-weight: 300; */
+		/* font-size: 1em; */
+	}
+
+	.current-duration {
+		font-size: 3.5rem;
+		padding: 0 0 0 7%;
+		margin: 10% 0 0% 0;
+	}
+}
+
+/*# Front-end Style Guide*/
+
+/*## Layout*/
+
+/*The designs were created to the following widths:*/
+
+/*- Mobile: 375px*/
+/*- Desktop: 1440px*/
+
+/*## Colors*/
+
+/*### Primary*/
+
+/*- Blue: hsl(246, 80%, 60%)*/
+
+/*- Light red (work): hsl(15, 100%, 70%)*/
+/*- Soft blue (play): hsl(195, 74%, 62%)*/
+/*- Light red (study): hsl(348, 100%, 68%)*/
+/*- Lime green (exercise): hsl(145, 58%, 55%)*/
+/*- Violet (social): hsl(264, 64%, 52%)*/
+/*- Soft orange (self care): hsl(43, 84%, 65%)*/
+
+/*### Neutral*/
+
+/*- Very dark blue: hsl(226, 43%, 10%)*/
+/*- Dark blue: hsl(235, 46%, 20%)*/
+/*- Desaturated blue: hsl(235, 45%, 61%)*/
+/*- Pale Blue: hsl(236, 100%, 87%)*/
+
+/*## Typography*/
+
+/*### Body Copy*/
+
+/*- Font size: 18px (card titles e.g. Work, Play)*/
+
+/*### Font*/
+
+/*- Family: [Rubik](https://fonts.google.com/specimen/Rubik)*/
+/* - Weights: 300, 400, 500 */

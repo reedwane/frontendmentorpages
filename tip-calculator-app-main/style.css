@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+	cursor: default;
+}
+:root {
+	--Strong-cyan: hsl(172, 67%, 45%);
+	--Very-dark-cyan: hsl(183, 100%, 15%);
+	--Dark-grayish-cyan: hsl(186, 14%, 43%);
+	--Dark-grayish-cyan-2: hsl(184, 14%, 56%);
+	--Light-grayish-cyan: hsl(185, 41%, 84%);
+	--Light-grayish-cyan-2: hsl(189, 41%, 97%);
+	--White: hsl(0, 0%, 100%);
+}
+
+body {
+	font-family: "Space Mono", monospace;
+	background: var(--Light-grayish-cyan);
+	color: var(--Dark-grayish-cyan);
+}
+main > img {
+	display: block;
+	width: 25%;
+	margin: 10% auto 10%;
+}
+section {
+	background: var(--White);
+	padding: 8%;
+	border-radius: 30px;
+	box-shadow: 0px 10px 30px rgba(114, 111, 111, 0.255);
+}
+
+h2 {
+	font-size: 0.8em;
+	font-weight: 700;
+}
+
+.bills,
+.tips {
+	margin-bottom: 10%;
+}
+
+input,
+.tips p {
+	width: 100%;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+input {
+	height: 100%;
+	border: none;
+	text-align: right;
+	font-weight: 700;
+	font-size: 1.2em;
+	background-color: var(--Light-grayish-cyan-2);
+	color: var(--Very-dark-cyan);
+	font-family: "Space Mono", monospace;
+	padding-right: 5%;
+}
+
+input:focus {
+	outline: none;
+	border: 2px solid var(--Strong-cyan);
+	border-radius: 5px;
+}
+.bills input,
+.people input {
+	height: 2em;
+	margin-top: 2%;
+}
+.bills input {
+	background: var(--Light-grayish-cyan-2) url("images/icon-dollar.svg") 5% 50%/3%
+		no-repeat;
+}
+
+.people input {
+	background: var(--Light-grayish-cyan-2) url("images/icon-person.svg") 5% 50%/3%
+		no-repeat;
+}
+
+.tips div {
+	display: grid;
+	grid-template-columns: 47% 47%;
+	row-gap: 10%;
+	column-gap: 5%;
+	margin-top: 5%;
+}
+
+.tips > div > p,
+button {
+	width: 100%;
+	height: 2em;
+	font-weight: 700;
+	font-size: 1.2em;
+	padding: 3%;
+	text-align: center;
+	color: var(--White);
+	background-color: var(--Very-dark-cyan);
+}
+
+.tips p:hover,
+button:hover {
+	background-color: var(--Dark-grayish-cyan);
+}
+
+.tips > div > p:last-of-type {
+	padding: 0;
+}
+
+.people {
+	margin-top: 20%;
+}
+.people-error {
+	color: red;
+	padding-left: 20%;
+	text-align: right;
+}
+
+.results {
+	background: var(--Very-dark-cyan);
+	margin-top: 10%;
+	border-radius: 15px;
+	padding: 7%;
+}
+
+.amount div {
+	margin-top: 5%;
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+
+.amount p {
+	color: var(--White);
+	font-size: 1em;
+	font-weight: 700;
+	display: inline-block;
+}
+.amount span {
+	font-size: 0.8em;
+	margin-top: 0;
+	display: block;
+	color: var(--Dark-grayish-cyan);
+}
+
+#tip-amount,
+#total-amount {
+	color: var(--Strong-cyan);
+	text-align: right;
+	font-size: 2em;
+	overflow: auto;
+}
+
+button {
+	margin-top: 10%;
+	cursor: pointer;
+	border: none;
+	background: var(--Strong-cyan);
+	border-radius: 5px;
+	color: var(--Very-dark-cyan);
+	text-transform: uppercase;
+	text-align: center;
+}
+
+#default {
+	background-color: var(--Strong-cyan);
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+	padding: 5%;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 450px) {
+	body {
+		padding: 0% 15%;
+	}
+}
+
+@media screen and (min-width: 700px) {
+	body {
+		padding: 0% 20%;
+	}
+	main img {
+		width: 10%;
+		margin: 15% auto 8%;
+	}
+	section {
+		display: grid;
+		grid-template-columns: 48% 48%;
+		column-gap: 5%;
+		padding: 5%;
+	}
+
+	.tips div {
+		grid-template-columns: 30% 30% 30%;
+		row-gap: 10%;
+		column-gap: 5%;
+		margin-top: 5%;
+	}
+	.results {
+		margin: 0;
+	}
+	button {
+		margin-top: 45%;
+	}
+
+	main {
+		height: 100%;
+	}
+	.attribution {
+		margin-top: 2%;
+	}
+}
+
+/* # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Strong cyan: hsl(172, 67%, 45%)
+
+### Neutral
+
+- Very dark cyan: hsl(183, 100%, 15%)
+- Dark grayish cyan: hsl(186, 14%, 43%)
+- Dark grayish cyan: hsl(184, 14%, 56%)
+- Light grayish cyan: hsl(185, 41%, 84%)
+- Light grayish cyan: hsl(189, 41%, 97%)
+- White: hsl(0, 0%, 100%)
+
+## Typography
+
+### Body Copy
+
+- Font size (form inputs): 24px
+
+### Font
+
+- Family: [Space Mono](https://fonts.google.com/specimen/Space+Mono)
+- Weights: 400, 500, 700
+ */
