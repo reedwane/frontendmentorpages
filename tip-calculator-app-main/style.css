@@ -185,7 +185,7 @@ button {
 
 @media screen and (min-width: 700px) {
 	body {
-		padding: 0% 20%;
+		padding: 0% 5%;
 	}
 	main img {
 		width: 10%;
@@ -216,6 +216,22 @@ button {
 	}
 	.attribution {
 		margin-top: 2%;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	body {
+		padding: 0% 10%;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	body {
+		padding: 0% 20%;
+	}
+	main {
+		max-width: 1152px;
+		max-height: 540px;
 	}
 }
 
