@@ -1,0 +1,171 @@
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+* {
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    color: hsl(229, 6%, 66%);
+    background-color: rgb(243, 250, 249);
+}
+
+.all{
+    margin: auto;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+.row{
+    width: 100%;
+}
+.row::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+header h2:first-of-type{
+    line-height: 80%;
+    font-weight: 200;
+}
+
+header h2:last-of-type{
+    line-height: 80%;
+    font-weight: 600;
+    color: black;
+}
+
+.cols-4, .center .cols-12 {
+    height: 250px;
+    padding: 20px;
+    box-shadow: 1px 10px 20px rgb(207, 202, 202);
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.all h2{
+    color: black;
+    line-height: 20%;
+}
+
+#left{
+    border-top: 4px solid hsl(180, 62%, 55%);
+}
+#top{
+    border-top: 4px solid hsl(0, 78%, 62%);
+}
+#bottom{
+    border-top: 4px solid hsl(34, 97%, 64%);
+}
+#right{
+    border-top: 4px solid hsl(212, 86%, 64%);
+}
+
+img{
+    float: right;
+}
+
+
+[class*=cols-]{max-width: 100%;}
+
+
+@media screen and (min-width: 1024px){
+   .cols-1{width: 8.33%;}
+   .cols-2{width: 16.66%;}
+   .cols-3{width: 25%;}
+   .cols-4{width: 33.33%;}
+   .cols-5{width: 41.66%;}
+   .cols-6{width: 50%;}
+   .cols-7{width: 58.33%;}
+   .cols-8{width: 66.66%;}
+   .cols-9{width: 75%;}
+   .cols-10{width: 83.33%;}
+   .cols-11{width: 91.66%;}
+   .cols-12{width: 100%} 
+
+   body {
+    width: 90%;
+    height: 1000px;
+    margin: 100px auto;
+    background-color: hsl(0, 0%, 98%);
+    box-shadow: 2px 5px 20px rgb(184, 178, 178);
+    }
+
+    header{
+        margin-left: 30%;
+    }
+
+    .all {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+    }
+    .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .center {
+        width: 33.33%;
+        margin-right: 40px;
+    }
+
+    .center::after {
+        content: "";
+        clear: both;
+        display: table-column;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+/* # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Red: hsl(0, 78%, 62%)
+- Cyan: hsl(180, 62%, 55%)
+- Orange: hsl(34, 97%, 64%)
+- Blue: hsl(212, 86%, 64%)
+
+### Neutral
+
+- Very Dark Blue: hsl(234, 12%, 34%)
+- Grayish Blue: hsl(229, 6%, 66%)
+- Very Light Gray: hsl(0, 0%, 98%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 15px
+
+### Fonts
+
+- Family: [Poppins](https://fonts.google.com/specimen/Poppins)
+- Weights: 200, 400, 600 */

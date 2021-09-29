@@ -1,0 +1,223 @@
+  .attribution { font-size: 11px; text-align: center; }
+  .attribution a { color: hsl(228, 24%, 96%); }
+
+  /* @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); */
+  /* @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap'); */
+
+  *{
+      box-sizing: border-box;
+  }
+  
+  
+
+    body {
+        background: hsl(257, 40%, 49%) url(images/bg-mobile.svg) no-repeat;
+        background-size: 100% 45%;
+        width: auto;
+        height: auto;
+        font-family: 'Open Sans', sans-serif;
+        color: rgb(255, 255, 255);
+        padding: 20px;
+    }
+
+    header img{
+        max-width: 40%;
+        float: left;
+    }
+
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+
+
+  .intro{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    h2 {
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+        padding: 0px 10px;
+    }
+
+    p {
+        text-align: center;
+        padding: 15px;
+        margin: 0px;
+    }
+
+    button {
+        background-color: rgb(255, 255, 255);
+        color: hsl(257, 40%, 49%);
+        border-style: none;
+        width: 60%;
+        padding: 10px;
+        align-self: center;
+        border-radius: 20px;
+        box-shadow: 1px 2px 5px rgb(43, 42, 42);
+        margin-top: 10px;
+        transition: background-color .3s ease-in, color .3s ease-in;
+    }
+
+    button:hover {
+        background-color: hsl(300, 69%, 71%);
+        color: rgb(255, 255, 255);
+    }
+
+    .social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+    }
+
+    i {
+        display: flex;
+        width: 35px;
+        justify-content: center;
+        padding: 10px;
+        margin: 5px;
+        border: solid 1px rgb(255, 253, 253);
+        border-radius: 50%;
+        transition: color .2s linear, border .2s linear;
+    }
+
+    i:hover{
+        color: hsl(300, 69%, 71%);
+        border: solid 1px hsl(300, 69%, 71%);
+    }
+
+    
+
+    .mockup {
+        margin: 10% 0%;
+        padding: 10px;
+    }
+
+
+
+    @media screen and (min-width: 1024px){
+
+        body{
+            background: hsl(257, 40%, 49%) url(images/bg-desktop.svg) no-repeat;
+            background-size: cover;
+        }
+        header {
+            width: 100%;
+            margin-bottom: 5%;
+        }
+        header img{
+            max-width: 15%;
+            float: none;
+        }
+        .one{
+            width: 55%;
+        }
+        .intro {
+            width: 45%;
+            padding: 30px 20px;
+        }
+        .mockup{
+            margin: 0%;
+        }
+        h2, p {
+            text-align: left;
+        }
+
+        h2 {
+            padding: 0px 90px 0px 0px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        p{
+            padding: 0px;
+        }
+        button {
+            align-self: normal;
+            width: 35%;
+        }
+
+        .container{
+            max-width: 1440px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .social {
+            justify-content: flex-end;
+            margin: 0px 20px;
+        }
+    }
+
+    @media screen and (min-width: 1440px){
+        h2 {
+            padding: 0px 100px 0px 0px;
+            font-weight: 700;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .mockup {
+            margin: 0% 0% 0% 5%;
+        }
+
+        p {
+            padding: 0px 10px 20px 0px;
+            font-size: 20px;
+            opacity: .8;
+        }
+
+        button {
+            align-self: normal;
+            width: 30%;
+            padding: 15px;
+            font-size: 20px;
+            border-radius: 30px;
+        }
+    }
+
+
+
+
+/* # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Violet: hsl(257, 40%, 49%)
+- Soft Magenta: hsl(300, 69%, 71%)
+
+## Typography
+
+### Headings
+
+- Family: [Poppins](https://fonts.google.com/specimen/Poppins)
+- Weights: 400, 700
+
+### Body
+
+- Family: [Open Sans](https://fonts.google.com/specimen/Open+Sans)
+- Weights: 400
+
+## Icons
+
+For the social icons, you can use a font icon library. Some suggestions can be found below:
+
+- [Font Awesome](https://fontawesome.com/)
+- [IcoMoon](https://icomoon.io/)
+- [Ionicons](https://ionicons.com/) */
