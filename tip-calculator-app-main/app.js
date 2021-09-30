@@ -110,9 +110,9 @@ window.addEventListener("DOMContentLoaded", (e) => {
 	reset.addEventListener("click", (e) => {
 		e.preventDefault();
 		e.target.style.opacity = 0.3;
-		noOfPeople.value = 0;
+		noOfPeople.value = "";
 		custom.value = "";
-		bills.value = 0;
+		bills.value = "";
 		bill = 0;
 		percent = 0;
 		defaultPercent.removeAttribute("id");
