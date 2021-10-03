@@ -35,7 +35,8 @@ h2 {
 
 h2 {
 	font-size: 0.6em;
-	padding-top: 50%;
+	padding-top: 40%;
+	text-align: right;
 }
 .heading {
 	display: grid;
@@ -131,11 +132,11 @@ p {
 
 p {
 	font-size: 2em;
-	overflow: scroll;
+	overflow: auto;
 }
 
 .inputs {
-	height: 25em;
+	height: 26em;
 }
 
 .inputs > form {
@@ -145,7 +146,7 @@ p {
 	grid-template-columns: 20% 20% 20% 20%;
 	grid-template-rows: auto;
 	column-gap: 6%;
-	row-gap: 5%;
+	row-gap: 6%;
 }
 button {
 	width: 100%;
@@ -192,6 +193,37 @@ button {
 	color: var(--key-background-toggle);
 }
 
+@media screen and (min-width: 450px) {
+	body {
+		padding: 10% 25%;
+	}
+}
+
+@media screen and (min-width: 850px) {
+	body {
+		padding: 15% 30%;
+	}
+	.heading {
+		display: grid;
+		grid-template-columns: 65% 35%;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	body {
+		padding: 7% 33%;
+	}
+	.inputs {
+		height: 27em;
+	}
+
+	.result {
+		height: 7em;
+	}
+	p {
+		font-size: 2.5em;
+	}
+}
 /*
 # Front-end Style Guide
 
