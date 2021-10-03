@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+
+:root {
+	--main-background: hsl(222, 26%, 31%);
+	--toggle-keypad-background: hsl(223, 31%, 20%);
+	--screen-background: hsl(224, 36%, 15%);
+	--key-background-1: hsl(225, 21%, 49%);
+	--key-shadow-1: hsl(224, 28%, 35%);
+	--key-background-toggle: hsl(6, 63%, 50%);
+	--key-shadow-2: hsl(6, 70%, 34%);
+	--key-background-2: hsl(30, 25%, 89%);
+	--key-shadow-3: hsl(28, 16%, 65%);
+	--text-color-1: rgb(253, 255, 255);
+	--text-color-2: white;
+	--text-white: hsl(0, 0, 100%);
+	--key-color: hsl(221, 14%, 31%);
+}
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: var(--main-background);
+	padding: 7%;
+	width: 100vw;
+	height: 100%;
+	font-family: "Spartan", sans-serif;
+}
+
+h1,
+h2 {
+	display: inline-block;
+}
+
+h2 {
+	font-size: 0.6em;
+	padding-top: 50%;
+}
+.heading {
+	display: grid;
+	grid-template-columns: 60% 40%;
+}
+
+.theme {
+	display: grid;
+	grid-template-columns: 40% 60%;
+	column-gap: 10%;
+}
+
+.theme > div > form {
+	display: grid;
+	grid-template-rows: 50% 50%;
+	row-gap: 5%;
+}
+
+.labels,
+.radios {
+	display: grid;
+	grid-template-columns: 30% 30% 30%;
+	column-gap: 5%;
+}
+
+.radios,
+.inputs {
+	background-color: var(--toggle-keypad-background);
+}
+.labels {
+	width: 80%;
+	margin: 0 auto;
+}
+label {
+	font-size: 0.7em;
+}
+
+.radios {
+	padding: 5% 7% 6%;
+	width: 90%;
+	margin-right: 5%;
+	border-radius: 10px;
+}
+
+input[type="radio"] {
+	width: 10px;
+}
+
+input[type="radio"]:after {
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	top: -2px;
+	left: -1px;
+	position: relative;
+	background-color: var(--toggle-keypad-background);
+	content: "";
+	display: inline-block;
+	visibility: visible;
+	border: 2px solid var(--toggle-keypad-background);
+}
+
+input[type="radio"]:checked:after {
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	top: -2px;
+	left: -1px;
+	position: relative;
+	background-color: var(--key-background-toggle);
+	content: "";
+	display: inline-block;
+	visibility: visible;
+	border: 2px solid var(--key-background-toggle);
+}
+
+h1,
+h2,
+label,
+p {
+	color: var(--text-color-1);
+	/* color: white; */
+}
+
+.result {
+	height: 5em;
+	margin: 7% 0 7%;
+	border-radius: 10px;
+	padding: 8%;
+	text-align: right;
+	background-color: var(--screen-background);
+}
+
+p {
+	font-size: 2em;
+	overflow: scroll;
+}
+
+.inputs {
+	height: 25em;
+}
+
+.inputs > form {
+	margin: 5% 0 5%;
+	padding: 7%;
+	display: grid;
+	grid-template-columns: 20% 20% 20% 20%;
+	grid-template-rows: auto;
+	column-gap: 6%;
+	row-gap: 5%;
+}
+button {
+	width: 100%;
+	height: 2.5em;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0px 3px 0px var(--key-shadow-3);
+	background-color: var(--key-background-2);
+	font-size: 1.5em;
+	font-family: "Spartan", sans-serif;
+	color: var(--key-color);
+}
+
+.del {
+	font-size: 1em;
+	height: 3.7em;
+}
+.del,
+.reset {
+	background-color: var(--key-background-1);
+	box-shadow: 0px 3px 0px var(--key-shadow-1);
+	color: white;
+}
+
+.reset {
+	grid-column: 1 / span 2;
+}
+
+.sum {
+	grid-column: 3 / span 2;
+	background-color: var(--key-background-toggle);
+	box-shadow: 0px 3px 0px var(--key-shadow-2);
+	color: var(--text-color-2);
+}
+
+.attribution {
+	margin-top: 5%;
+	font-size: 11px;
+	text-align: center;
+	color: var(--text-color-1);
+}
+
+.attribution a {
+	color: var(--key-background-toggle);
+}
+
+/*
+# Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Theme 1
+
+#### Backgrounds
+
+- Very dark desaturated blue (main background): hsl(222, 26%, 31%)
+- Very dark desaturated blue (toggle background, keypad background): hsl(223, 31%, 20%)
+- Very dark desaturated blue (screen background): hsl(224, 36%, 15%)
+
+#### Keys
+
+- Desaturated dark blue (key background): hsl(225, 21%, 49%)
+- Desaturated dark blue (key shadow): hsl(224, 28%, 35%)
+
+- Red (key background, toggle): hsl(6, 63%, 50%)
+- Dark red (key shadow): hsl(6, 70%, 34%)
+
+- Light grayish orange (key background): hsl(30, 25%, 89%)
+- Grayish orange (key shadow): hsl(28, 16%, 65%)
+
+#### Text
+
+- Very dark grayish blue: hsl(221, 14%, 31%)
+- White: hsl(0, 0, 100%)
+
+### Theme 2
+
+#### Backgrounds
+
+- Light gray (main background): hsl(0, 0%, 90%)
+- Grayish red (toggle background, keypad background): hsl(0, 5%, 81%)
+- Very light gray (screen background): hsl(0, 0%, 93%)
+
+#### Keys
+
+- Dark moderate cyan (key background): hsl(185, 42%, 37%)
+- Very dark cyan (key shadow): hsl(185, 58%, 25%)
+
+- Orange (key background, toggle): hsl(25, 98%, 40%)
+- Dark orange (key shadow): hsl(25, 99%, 27%)
+
+- Light grayish yellow (key background): hsl(45, 7%, 89%)
+- Dark grayish orange (key shadow): hsl(35, 11%, 61%)
+
+#### Text
+
+- Very dark grayish yellow: hsl(60, 10%, 19%)
+- White (text): hsl(0, 0, 100%)
+
+### Theme 3
+
+#### Backgrounds
+
+- Very dark violet (main background): hsl(268, 75%, 9%)
+- Very dark violet (toggle background, keypad background, screen background): hsl(268, 71%, 12%)
+
+#### Keys
+
+- Dark violet (key background): hsl(281, 89%, 26%)
+- Vivid magenta (key shadow): hsl(285, 91%, 52%)
+
+- Pure cyan (key background, toggle): hsl(176, 100%, 44%)
+- Soft cyan (key shadow): hsl(177, 92%, 70%)
+
+- Very dark violet (key background): hsl(268, 47%, 21%)
+- Dark magenta (key shadow): hsl(290, 70%, 36%)
+
+#### Text
+
+- Light yellow: hsl(52, 100%, 62%)
+- Very dark blue: hsl(198, 20%, 13%)
+- White (text): hsl(0, 0, 100%)
+
+## Typography
+
+### Body Copy
+
+- Font size (numbers): 32px
+
+### Font
+
+- Family: [Spartan](https://fonts.google.com/specimen/Spartan)
+- Weights: 700
+ */
