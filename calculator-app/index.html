@@ -1,26 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="style.css">
+
   <title>Frontend Mentor | Calculator app</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+
 </head>
+
 <body>
 
+  <div class="app">
 
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    <div class="heading">
+      <h1>calc</h1>
+      <div class="theme">
+        <h2>THEME</h2>
+        <div>
+          <form>
+            <div class="labels">
+              <label for="one">1</label>
+              <label for="two">2</label>
+              <label for="three">3</label>
+            </div>
+
+            <div class="radios">
+              <input type="radio" name="theme" id="one" value="one" checked>
+
+              <input type="radio" name="theme" id="two" value="two">
+
+              <input type="radio" name="theme" id="three" value="three">
+
+
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="result">
+      <p id="number-input"></p>
+    </div>
+
+    <!-- for fails.js -->
+    <!-- <div class="result">
+      <p id="saved-input"></p>
+      <p id="present-input"><span id="number-input"></span></p>
+
+    </div> -->
+
+    <div class="inputs">
+      <form>
+        <button class="figure" value=7>7</button>
+        <button class="figure" value=8>8</button>
+        <button class="figure" value=9>9</button>
+        <button class="del" value="DEL">DEL</button>
+        <button class="figure" value=4>4</button>
+        <button class="figure" value=5>5</button>
+        <button class="figure" value=6>6</button>
+        <button class="operator plus" value="+">+</button>
+        <button class="figure" value=1>1</button>
+        <button class="figure" value=2>2</button>
+        <button class="figure" value=3>3</button>
+        <button class="operator minus" value="-">-</button>
+        <button class="figure" value=".">.</button>
+        <button class="figure" value=0>0</button>
+        <button class="operator divide" value="/">/</button>
+        <button class="operator multiply" value=*>x</button>
+        <button class="last reset" type="reset">RESET</button>
+        <button class="last sum" type="submit">=</button>
+      </form>
+
+    </div>
+
   </div>
+
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/reedwane" target="_blank">Abdulkareem Ridwan Gboyega</a>.
+  </div>
+
+  <script src="app.js"></script>
 </body>
+
 </html>
