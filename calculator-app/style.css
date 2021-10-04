@@ -125,6 +125,7 @@ p {
 	height: 5em;
 	margin: 7% 0 7%;
 	border-radius: 10px;
+	overflow: auto;
 	padding: 8%;
 	text-align: right;
 	background-color: var(--screen-background);

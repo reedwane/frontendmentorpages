@@ -113,7 +113,7 @@ window.addEventListener("DOMContentLoaded", (e) => {
                 
                 
                         <h3>Border Countries</h3>
-                        <div>
+                        <div class="bordering-countries">
                             ${borderNames.join(`
                             `)}
                         </div>`;
@@ -122,6 +122,14 @@ window.addEventListener("DOMContentLoaded", (e) => {
 
 					//
 				});
+
+				//
+			});
+
+			//
+
+			document.querySelectorAll(".bordering-countries p").forEach((country) => {
+				country.addEventListener("click", (e) => {});
 			});
 		})
 		.catch((err) => console.log(err.message));

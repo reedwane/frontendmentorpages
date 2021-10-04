@@ -84,7 +84,9 @@ window.addEventListener("DOMContentLoaded", (e) => {
 	// event listener for the equal sign
 	document.querySelector(".sum").addEventListener("click", (e) => {
 		e.preventDefault();
-		numberInput.innerText = eval(numberInput.innerText);
+		if (numberInput.innerText != "") {
+			numberInput.innerText = eval(numberInput.innerText);
+		}
 	});
 	// numberInput.innerText = "";
 
