@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+* {
+	box-sizing: border-box;
+	margin: 0;
+	font-family: "Nunito Sans", sans-serif;
+}
+:root {
+	--Mode-Elements: hsl(209, 23%, 22%);
+	--Mode-Background: hsl(207, 26%, 17%);
+	--Light-Mode-Text: hsl(200, 15%, 8%);
+	--Light-Mode-Input: hsl(0, 0%, 52%);
+	--Light-Mode-Background: hsl(0, 0%, 98%);
+	--Mode-Text: hsl(0, 0%, 100%);
+	--Light-Mode-Elements: hsl(0, 0%, 100%);
+}
+
+body {
+	background-color: var(--Mode-Background);
+	color: var(--Mode-Text);
+}
+
+header {
+	width: 100vw;
+	height: 5em;
+	background-color: var(--Mode-Elements);
+	padding: 8% 5% 10%;
+	display: grid;
+	grid-template-columns: 60% 40%;
+}
+header p {
+	text-align: right;
+	font-size: 0.8em;
+}
+
+h1 {
+	font-size: 0.9em;
+}
+
+input {
+	width: 90%;
+	margin: 7% 5%;
+	height: 3.5em;
+	background-color: var(--Mode-Elements);
+	border: none;
+}
+
+input:focus {
+	outline: none;
+	border: 1px solid var(--Mode-Text);
+}
+
+select {
+	background-color: var(--Mode-Elements);
+	border: none;
+	width: 90%;
+	margin-left: 5%;
+	padding: 0 5%;
+	color: var(--Mode-Text);
+	height: 3em;
+	font-size: 0.7em;
+}
+select:focus {
+	outline: none;
+}
+
+.wrap {
+	margin: 0 5%;
+	width: 50%;
+	background-color: var(--Mode-Elements);
+}
+
+.countries-list {
+	min-height: 80vh;
+}
+
+.country-detail {
+	width: 70%;
+	margin: 7% auto;
+}
+
+#sample {
+	display: none;
+}
+
+img {
+	width: 100%;
+	height: auto;
+	margin-bottom: -3%;
+}
+
+.detail {
+	height: 12em;
+	background-color: var(--Mode-Elements);
+	padding: 7%;
+}
+
+h2 {
+	font-size: 1.2em;
+	margin-bottom: 5%;
+}
+
+.tag {
+	font-weight: 300;
+}
+
+p {
+	font-weight: 600;
+	font-size: 1em;
+	margin-bottom: 3%;
+}
+
+.specific-details {
+	display: none;
+}
+/* 
+# Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Neutral
+
+- Dark Blue (Dark Mode Elements): hsl(209, 23%, 22%)
+- Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%)
+- Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
+- Dark Gray (Light Mode Input): hsl(0, 0%, 52%)
+- Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
+- White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%)
+
+## Typography
+
+### Body Copy
+
+- Homepage Items: 14px
+- Detail Page: 16px 
+
+### Fonts
+
+- Family: [Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans)
+- Weights: 300, 600, 800
+
+## Icons
+
+For the icons, you can use a font icon library. Don't worry if the icons that you choose don't look exactly like they do on the design.
+
+Some suggestions can be found below:
+
+- [Font Awesome](https://fontawesome.com)
+- [IcoMoon](https://icomoon.io)
+- [Ionicons](https://ionicons.com) */
