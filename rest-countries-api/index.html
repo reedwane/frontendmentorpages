@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- displays site properly based on user's device -->
+    <script src="https://kit.fontawesome.com/cd99e521b9.js" crossorigin="anonymous"></script>
 
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
     <link rel="stylesheet" href="style.css">
+
     <meta name="description" content="This is Ridwan's solution to the FrontEndMentor.io calculator app challenge">
 
     <title>Frontend Mentor | REST Countries API</title>
@@ -21,23 +23,23 @@
     <header>
         <h1>Where in the world?</h1>
 
-        <p><span></span>Dark Mode</p>
+        <p class="theme-toggle"><i class="far fa-moon"></i> Dark Mode</p>
     </header>
 
     <main>
         <div class="search-filter">
-            <input type="text" name="search" id="search">
+            <input type="search" name="search" id="search" placeholder="Search for a country...">
 
-            <div class="wrap">
-                <select required>
-                    <option hidden selected disabled value="">Filter by Region</option>
-                    <option value="Africa">Africa</option>
-                    <option value="America">America</option>
-                    <option value="Asia">Asia</option>
-                    <option value="Europe">Europe</option>
-                    <option value="Oceania">Oceania</option>
-                </select>
-            </div>
+
+            <select required id="filter" name="filter">
+                <option hidden selected disabled value="">Filter by Region</option>
+                <option value="Africa">Africa</option>
+                <option value="Americas">America</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="Oceania">Oceania</option>
+            </select>
+
 
         </div>
 
@@ -58,12 +60,7 @@
 
     </main>
 
-    <section class="specific-details">
-
-
-
-
-    </section>
+    <section class="specific-details"></section>
 
 
 

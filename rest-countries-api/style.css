@@ -30,6 +30,7 @@ header {
 header p {
 	text-align: right;
 	font-size: 0.8em;
+	margin-top: 3%;
 }
 
 h1 {
@@ -38,21 +39,33 @@ h1 {
 
 input {
 	width: 90%;
+	font-size: 1em;
 	margin: 7% 5%;
 	height: 3.5em;
+	padding-left: 20%;
+	color: var(--Mode-Text);
+	background: url("images/lens-white.png") 7% 50%/ 5% no-repeat;
+	padding: 5%;
 	background-color: var(--Mode-Elements);
 	border: none;
 }
 
+::placeholder {
+	color: var(--Mode-Text);
+	opacity: 1;
+	padding-left: 10%;
+}
+
 input:focus {
 	outline: none;
+	padding-left: 20%;
 	border: 1px solid var(--Mode-Text);
 }
 
 select {
 	background-color: var(--Mode-Elements);
 	border: none;
-	width: 90%;
+	width: 50%;
 	margin-left: 5%;
 	padding: 0 5%;
 	color: var(--Mode-Text);
@@ -63,29 +76,29 @@ select:focus {
 	outline: none;
 }
 
-.wrap {
-	margin: 0 5%;
-	width: 50%;
-	background-color: var(--Mode-Elements);
-}
-
 .countries-list {
 	min-height: 80vh;
+	display: grid;
 }
 
 .country-detail {
+	display: inline-block;
 	width: 70%;
-	margin: 7% auto;
+	margin: 7% 15%;
+}
+.country-detail div {
+	height: 50%;
 }
 
 #sample {
 	display: none;
 }
 
-img {
+.country-detail img {
 	width: 100%;
-	height: auto;
+	height: 10em;
 	margin-bottom: -3%;
+	object-fit: cover;
 }
 
 .detail {
@@ -103,6 +116,10 @@ h2 {
 	font-weight: 300;
 }
 
+.theme-toggle p {
+	margin: 0;
+}
+
 p {
 	font-weight: 600;
 	font-size: 1em;
@@ -111,7 +128,202 @@ p {
 
 .specific-details {
 	display: none;
+	padding: 7%;
+	height: 70%;
 }
+
+.attribution {
+	text-align: center;
+}
+.attribution a {
+	color: var(--Mode-Text);
+}
+
+.home {
+	height: 2em;
+	padding: 2%;
+	padding-left: 5%;
+	display: inline-block;
+	width: 30%;
+	background-color: var(--Mode-Elements);
+	margin: 5% 0;
+	box-shadow: 0px 0px 10px hsl(200deg 15% 8%);
+}
+
+.specific-details img {
+	margin: 10% 0 10%;
+	width: 100%;
+}
+
+.specific-details > div > div {
+	margin-bottom: 10%;
+}
+
+.border {
+	height: 2.5em;
+	font-weight: 300;
+	margin: 2% 2%;
+	font-size: 0.8em;
+	padding: 2% 5% 2%;
+	display: inline-block;
+	background-color: var(--Mode-Elements);
+	box-shadow: 0px 0px 5px hsl(200deg 15% 8%);
+}
+
+@media screen and (min-width: 600px) {
+	.search-filter {
+		display: grid;
+		grid-template-columns: 70% 30%;
+	}
+	select {
+		margin: 17% 0 0 40%;
+		height: 4em;
+	}
+	.countries-list {
+		grid-template-columns: 50% 50%;
+	}
+	.specific-details {
+		padding: 3%;
+	}
+	.specific-details > div > div {
+		margin: 0px 6% 5% 0;
+		width: 40%;
+		display: inline-block;
+	}
+
+	.specific-details > div > div:last-of-type {
+		width: 100%;
+	}
+	.home {
+		height: 2em;
+		padding: 1%;
+		padding-left: 5%;
+		width: 20%;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	header {
+		width: 100vw;
+		height: 5em;
+		background-color: var(--Mode-Elements);
+		padding: 3% 5% 2%;
+	}
+	.countries-list {
+		grid-template-columns: 33% 33% 33%;
+	}
+
+	input {
+		width: 50%;
+		height: 2em;
+		padding: 4%;
+	}
+	.home {
+		height: 2em;
+		padding: 1%;
+		padding-left: 2%;
+		width: 13%;
+	}
+
+	.all {
+		display: grid;
+		grid-template-columns: auto auto;
+		row-gap: 2%;
+		column-gap: 3%;
+	}
+
+	.all div {
+		padding: 5%;
+	}
+	.specific-details > div > div {
+		margin: 0px 6% 5% 0;
+		width: 100%;
+		display: inline-block;
+	}
+	.specific-details img {
+		margin: 0;
+		width: 32vw;
+		/* height: 37vh; */
+		object-fit: cover;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.all {
+		display: grid;
+		grid-template-columns: 35% 25% 25%;
+		column-gap: 2%;
+		grid-template-rows: auto auto;
+	}
+
+	.specific-details > div > div:last-of-type {
+		grid-column: 1 / span 3;
+	}
+	.border {
+		padding: 1% 2% 1%;
+	}
+
+	.home {
+		height: 3em;
+		padding: 1%;
+		padding-left: 3%;
+		width: 11%;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.countries-list {
+		grid-template-columns: 25% 25% 25% 25%;
+	}
+	.all {
+		display: grid;
+		grid-template-columns: 40% 20% 20%;
+		grid-template-rows: auto auto;
+		grid-template-rows: 33% 20%;
+	}
+	header {
+		padding: 2% 5% 2%;
+	}
+	header p {
+		margin-top: 0;
+	}
+
+	.specific-details img {
+		margin: 0;
+		width: 32vw;
+		height: 37vh;
+		object-fit: cover;
+	}
+	.specific-details > div > div:last-of-type {
+		grid-column: 2 / span 2;
+		margin: 9% 0;
+	}
+	h2 {
+		font-size: 2em;
+		margin-bottom: 8%;
+	}
+
+	h4 {
+		display: inline-block;
+	}
+
+	.specific-details > div > div {
+		margin: 0px 6% 5% 0;
+		padding-top: 15%;
+	}
+	.specific-details > div > div:nth-of-type(2) {
+		padding-top: 35%;
+	}
+
+	.specific-details > div > div:last-of-type {
+		grid-column: 2 / span 2;
+		margin: -2% 0;
+	}
+	.attribution {
+		margin-top: -5%;
+	}
+}
+
 /* 
 # Front-end Style Guide
 
