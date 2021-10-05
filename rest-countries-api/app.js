@@ -19,8 +19,8 @@ window.addEventListener("DOMContentLoaded", (e) => {
 	});
 
 	//async fetch
-	const getData = async () => {
-		let url = "https://restcountries.com/v2/all";
+	let url = "https://restcountries.com/v2/all";
+	const getData = async (url) => {
 		const resp = await fetch(url);
 
 		if (resp.status !== 200) {
@@ -31,7 +31,7 @@ window.addEventListener("DOMContentLoaded", (e) => {
 		return data;
 	};
 
-	getData()
+	getData(url)
 		.then((data) => {
 			// let restData = data;
 			console.log(data);
@@ -174,7 +174,9 @@ window.addEventListener("DOMContentLoaded", (e) => {
 				let searchTerm = e.target.value.toLowerCase();
 				let countriesList = document.querySelectorAll(".country-detail");
 
-				countriesList.forEach((country) => {
+				//restcountries.com/v2/name/{name}
+
+				https: countriesList.forEach((country) => {
 					let name = country
 						.querySelector(".country-name")
 						.innerText.toLowerCase();
