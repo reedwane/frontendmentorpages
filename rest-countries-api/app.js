@@ -7,14 +7,14 @@ window.addEventListener("DOMContentLoaded", (e) => {
 		let presentTheme =
 			getComputedStyle(body).getPropertyValue("--Mode-Background");
 
-		if (presentTheme == "hsl(207, 26%, 17%)") {
-			root.style.setProperty("--Mode-Elements", "hsl(0, 0%, 100%)");
-			root.style.setProperty("--Mode-Text", "hsl(200, 15%, 8%)");
-			root.style.setProperty("--Mode-Background", "hsl(0, 0%, 98%)");
-		} else {
+		if (presentTheme !== "hsl(207, 26%, 17%)") {
 			root.style.setProperty("--Mode-Elements", "hsl(209, 23%, 22%)");
 			root.style.setProperty("--Mode-Text", "hsl(0, 0%, 100%)");
 			root.style.setProperty("--Mode-Background", "hsl(207, 26%, 17%)");
+		} else {
+			root.style.setProperty("--Mode-Elements", "hsl(0, 0%, 100%)");
+			root.style.setProperty("--Mode-Text", "hsl(200, 15%, 8%)");
+			root.style.setProperty("--Mode-Background", "hsl(0, 0%, 98%)");
 		}
 	});
 
