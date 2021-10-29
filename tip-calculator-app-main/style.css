@@ -227,11 +227,17 @@ button {
 
 @media screen and (min-width: 1440px) {
 	body {
-		padding: 0% 20%;
+		padding: 0;
+		max-width: 40%;
+		margin: 4% auto;
 	}
 	main {
 		max-width: 1152px;
 		max-height: 540px;
+	}
+	.attribution {
+		margin-top: 15%;
+		font-size: 1.3rem;
 	}
 }
 

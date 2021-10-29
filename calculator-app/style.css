@@ -212,7 +212,9 @@ button {
 
 @media screen and (min-width: 1440px) {
 	body {
-		padding: 7% 33%;
+		padding: 0;
+		max-width: 25%;
+		margin: 5% auto;
 	}
 	.inputs {
 		height: 27em;
@@ -225,6 +227,7 @@ button {
 		font-size: 2.5em;
 	}
 }
+
 /*
 # Front-end Style Guide
 

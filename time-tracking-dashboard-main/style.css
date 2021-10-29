@@ -374,6 +374,10 @@ body {
 		max-width: 1152px;
 		max-height: 540px;
 	}
+
+	body {
+		padding: 7% 30% 15%;
+	}
 }
 
 /*# Front-end Style Guide*/
