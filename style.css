@@ -142,7 +142,7 @@ footer {
 
 @media screen and (min-width: 1440px) {
 	body {
-		padding: 0% 20%;
+		padding: 3% 20%;
 	}
 	main {
 		max-width: 1152px;
