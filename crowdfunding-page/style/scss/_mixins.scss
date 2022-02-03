@@ -1,0 +1,13 @@
+@mixin partialborder($top, $right, $bottom, $left) {
+  content: "";
+  display: block;
+  position: relative;
+  width: 40%;
+  height: 0.05em;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  //   border: 0.em solid $faint-black;
+}

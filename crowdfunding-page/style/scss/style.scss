@@ -1,0 +1,395 @@
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap");
+@import "variables";
+@import "mixins";
+
+//global styles
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: "Commissioner", sans-serif;
+  font-weight: 400;
+}
+
+// for toggling the mobile nav menu
+.close {
+  display: none;
+}
+
+// for the modal background effect
+.modal-open {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.501);
+}
+
+header {
+  background: black url("../../images/image-hero-mobile.jpg") center
+    center/cover no-repeat;
+  // padding: 5%;
+  height: 20em;
+
+  .icons {
+    width: 100%;
+    padding: 5%;
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  ul {
+    list-style: none;
+    background-color: white;
+    z-index: 3;
+    margin: 20% auto;
+    height: fit-content;
+    width: 90%;
+    border-radius: 15px;
+    padding: 5% 0 5%;
+
+    li {
+      text-align: left;
+      font-size: 1.3rem;
+      font-weight: 500;
+      height: 2.8em;
+      padding: 0.8em;
+
+      &:nth-of-type(2) {
+        border-top: 0.5px solid rgba(0, 0, 0, 0.3);
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
+      }
+
+      a {
+        color: black;
+        font-size: 1.3rem;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+// main {
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin: -1em auto 1em;
+}
+
+p {
+  line-height: 1.7rem;
+}
+
+// section cards
+section {
+  width: 90%;
+  margin: 0 auto 2em;
+  padding: 5%;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+// the icon that is shifted to the top
+#mastercraftLogo,
+.intro {
+  display: inline-block;
+  position: relative;
+  top: -3em;
+}
+
+// intro card stylings
+.intro {
+  //to hide the bookmark text for small screens
+  .large {
+    display: none;
+  }
+
+  .links {
+    margin-top: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    // the back this project link button
+    .back {
+      color: white;
+      font-weight: 500;
+      width: 75%;
+      height: 3em;
+      border-radius: 2em;
+      padding: 0.7em;
+      background-color: $moderate-cyan;
+    }
+  }
+}
+
+// funding progress card sytling
+.progress {
+  padding: 8%;
+  p {
+    &:nth-of-type(1):after {
+      @include partialborder(0.5em, 0, 0, 5em);
+    }
+
+    &:nth-of-type(2):after {
+      @include partialborder(0.5em, 0, 0, 5em);
+    }
+  }
+
+  p span {
+    display: block;
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 5%;
+  }
+
+  .progress-bar {
+    position: relative;
+    width: 100%;
+    height: 1em;
+    background: $faint-black;
+    border-radius: 10px;
+  }
+
+  .progress-bar::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    width: calc(
+      var(--width, 89.9) * 1%
+    ); //the --width variable is created in the html and also defaulted to 89.9
+    max-width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: $moderate-cyan;
+  }
+}
+
+// About section styling
+.about,
+.modalContent {
+  padding: 5%;
+
+  h2,
+  h3,
+  a,
+  .available {
+    text-align: left;
+    font-weight: 700;
+  }
+
+  h2 {
+    margin-top: 1em;
+  }
+
+  .amount {
+    font-weight: 500;
+    color: $dark-cyan;
+    display: inline-block;
+    margin-top: 0.5em;
+  }
+
+  p {
+    text-align: left;
+    margin: 1.5em auto;
+  }
+
+  div {
+    text-align: left;
+    width: 95%;
+    margin: 2em auto 2em;
+    padding: 7%;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .available {
+    font-size: 2rem;
+    margin: 1em auto 1em;
+
+    span {
+      font-size: 1rem;
+      position: relative;
+      margin-left: 2%;
+      top: -0.5rem;
+    }
+  }
+
+  a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    height: 3em;
+    width: 60%;
+    padding: 0.7em;
+    background: $moderate-cyan;
+    border-radius: 1.5em;
+  }
+}
+
+.modalContent {
+  background-color: white;
+  z-index: 2;
+  margin: 20% auto;
+  height: fit-content;
+  width: 90%;
+  border-radius: 15px;
+  padding: 5% 0 5%;
+}
+
+// the modal from 'back this project'
+.backerModal {
+  .modal-heading {
+    margin: 1em auto 1em;
+    padding: 0;
+    box-shadow: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .modalContent {
+    padding: 5%;
+
+    // the checkbox for the pledge selection in the modal
+    .title {
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      display: grid;
+      grid-template-columns: 20% auto;
+      grid-template-rows: auto auto;
+
+      // the circular check to select a pledge
+      .check {
+        grid-row: 1 / span 2;
+        align-self: center;
+        padding: 0;
+        margin: 0;
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 50%;
+      }
+      h3 {
+        display: inline-block;
+        font-size: 1rem;
+      }
+
+      .amount {
+        text-align: left;
+      }
+    }
+
+    // hide the confirmation message
+    .confirm {
+      // the border line above the confirmation section
+      &::before {
+        content: "";
+        margin-left: -7%;
+        width: 120%;
+        height: 0.2em;
+        display: inline-block;
+        background-color: $faint-black;
+      }
+
+      display: none;
+      box-shadow: none;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+
+      p {
+        text-align: center;
+      }
+
+      .price {
+        &::before {
+          content: "$";
+          font-weight: 300;
+          margin-right: 10%;
+        }
+
+        border: 1px solid $faint-black;
+        display: inline-block;
+        height: 3em;
+        padding: 0.7em;
+        width: 45%;
+        margin-right: 8%;
+        font-weight: 700;
+        font-size: 01rem;
+        border-radius: 1.5em;
+      }
+
+      a {
+        font-size: 0.8rem;
+        width: 45%;
+      }
+    }
+
+    // styles for when a pledge is selected on the modal
+    .checked {
+      box-shadow: none;
+      border: 1px solid $dark-cyan;
+
+      .check {
+        &::before {
+          content: "";
+          position: relative;
+          left: 25%;
+          top: 5%;
+          width: 50%;
+          height: 50%;
+          display: inline-block;
+          background-color: $dark-cyan;
+          border-radius: 50%;
+        }
+      }
+
+      .confirm {
+        display: block;
+      }
+    }
+  }
+}
+
+// the success modal styles
+.successModal {
+  img {
+    margin: 1em;
+  }
+  .modalContent {
+    margin-top: 40%;
+    height: 50%;
+    border-radius: 7px;
+
+    h3,
+    p {
+      text-align: center;
+    }
+
+    a {
+      width: 35%;
+    }
+  }
+}
+// }

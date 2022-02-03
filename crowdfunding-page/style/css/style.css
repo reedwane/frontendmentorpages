@@ -1,0 +1,356 @@
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap");
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: "Commissioner", sans-serif;
+  font-weight: 400;
+}
+
+.close {
+  display: none;
+}
+
+.modal-open {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.501);
+}
+
+header {
+  background: black url("../../images/image-hero-mobile.jpg") center center/cover no-repeat;
+  height: 20em;
+}
+header .icons {
+  width: 100%;
+  padding: 5%;
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+header ul {
+  list-style: none;
+  background-color: white;
+  z-index: 3;
+  margin: 20% auto;
+  height: fit-content;
+  width: 90%;
+  border-radius: 15px;
+  padding: 5% 0 5%;
+}
+header ul li {
+  text-align: left;
+  font-size: 1.3rem;
+  font-weight: 500;
+  height: 2.8em;
+  padding: 0.8em;
+}
+header ul li:nth-of-type(2) {
+  border-top: 0.5px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
+}
+header ul li a {
+  color: black;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin: -1em auto 1em;
+}
+
+p {
+  line-height: 1.7rem;
+}
+
+section {
+  width: 90%;
+  margin: 0 auto 2em;
+  padding: 5%;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+#mastercraftLogo,
+.intro {
+  display: inline-block;
+  position: relative;
+  top: -3em;
+}
+
+.intro .large {
+  display: none;
+}
+.intro .links {
+  margin-top: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.intro .links .back {
+  color: white;
+  font-weight: 500;
+  width: 75%;
+  height: 3em;
+  border-radius: 2em;
+  padding: 0.7em;
+  background-color: #3cb4ac;
+}
+
+.progress {
+  padding: 8%;
+}
+.progress p:nth-of-type(1):after {
+  content: "";
+  display: block;
+  position: relative;
+  width: 40%;
+  height: 0.05em;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 0.5em;
+  right: 0;
+  bottom: 0;
+  left: 5em;
+}
+.progress p:nth-of-type(2):after {
+  content: "";
+  display: block;
+  position: relative;
+  width: 40%;
+  height: 0.05em;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 0.5em;
+  right: 0;
+  bottom: 0;
+  left: 5em;
+}
+.progress p span {
+  display: block;
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 5%;
+}
+.progress .progress-bar {
+  position: relative;
+  width: 100%;
+  height: 1em;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.progress .progress-bar::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  width: calc(var(--width, 89.9) * 1%);
+  max-width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: #3cb4ac;
+}
+
+.about,
+.modalContent {
+  padding: 5%;
+}
+.about h2,
+.about h3,
+.about a,
+.about .available,
+.modalContent h2,
+.modalContent h3,
+.modalContent a,
+.modalContent .available {
+  text-align: left;
+  font-weight: 700;
+}
+.about h2,
+.modalContent h2 {
+  margin-top: 1em;
+}
+.about .amount,
+.modalContent .amount {
+  font-weight: 500;
+  color: #147b74;
+  display: inline-block;
+  margin-top: 0.5em;
+}
+.about p,
+.modalContent p {
+  text-align: left;
+  margin: 1.5em auto;
+}
+.about div,
+.modalContent div {
+  text-align: left;
+  width: 95%;
+  margin: 2em auto 2em;
+  padding: 7%;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.about .available,
+.modalContent .available {
+  font-size: 2rem;
+  margin: 1em auto 1em;
+}
+.about .available span,
+.modalContent .available span {
+  font-size: 1rem;
+  position: relative;
+  margin-left: 2%;
+  top: -0.5rem;
+}
+.about a,
+.modalContent a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  height: 3em;
+  width: 60%;
+  padding: 0.7em;
+  background: #3cb4ac;
+  border-radius: 1.5em;
+}
+
+.modalContent {
+  background-color: white;
+  z-index: 2;
+  margin: 20% auto;
+  height: fit-content;
+  width: 90%;
+  border-radius: 15px;
+  padding: 5% 0 5%;
+}
+
+.backerModal .modal-heading {
+  margin: 1em auto 1em;
+  padding: 0;
+  box-shadow: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.backerModal .modalContent {
+  padding: 5%;
+}
+.backerModal .modalContent .title {
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  display: grid;
+  grid-template-columns: 20% auto;
+  grid-template-rows: auto auto;
+}
+.backerModal .modalContent .title .check {
+  grid-row: 1/span 2;
+  align-self: center;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+}
+.backerModal .modalContent .title h3 {
+  display: inline-block;
+  font-size: 1rem;
+}
+.backerModal .modalContent .title .amount {
+  text-align: left;
+}
+.backerModal .modalContent .confirm {
+  display: none;
+  box-shadow: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.backerModal .modalContent .confirm::before {
+  content: "";
+  margin-left: -7%;
+  width: 120%;
+  height: 0.2em;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.backerModal .modalContent .confirm p {
+  text-align: center;
+}
+.backerModal .modalContent .confirm .price {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  height: 3em;
+  padding: 0.7em;
+  width: 45%;
+  margin-right: 8%;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 1.5em;
+}
+.backerModal .modalContent .confirm .price::before {
+  content: "$";
+  font-weight: 300;
+  margin-right: 10%;
+}
+.backerModal .modalContent .confirm a {
+  font-size: 0.8rem;
+  width: 45%;
+}
+.backerModal .modalContent .checked {
+  box-shadow: none;
+  border: 1px solid #147b74;
+}
+.backerModal .modalContent .checked .check::before {
+  content: "";
+  position: relative;
+  left: 25%;
+  top: 5%;
+  width: 50%;
+  height: 50%;
+  display: inline-block;
+  background-color: #147b74;
+  border-radius: 50%;
+}
+.backerModal .modalContent .checked .confirm {
+  display: block;
+}
+
+.successModal img {
+  margin: 1em;
+}
+.successModal .modalContent {
+  margin-top: 40%;
+  height: 50%;
+  border-radius: 7px;
+}
+.successModal .modalContent h3,
+.successModal .modalContent p {
+  text-align: center;
+}
+.successModal .modalContent a {
+  width: 35%;
+}
+
+/*# sourceMappingURL=style.css.map */
