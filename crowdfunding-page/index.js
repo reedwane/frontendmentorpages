@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const burger = document.querySelector("#hamburger");
   const navlist = document.querySelector("nav ul");
+
   const selectRewardButton = document.querySelectorAll(".about a");
 
   const backModal = document.querySelector(".backerModal"); // the modal for the selections
@@ -112,6 +113,24 @@ document.addEventListener("DOMContentLoaded", () => {
   // displaying the success message after the confirmation
   document.querySelectorAll(".confirm a").forEach((submit) => {
     submit.addEventListener("click", (e) => {
+      const pledgeCard = e.target.parentNode.parentNode; // grab the pledge
+
+      const availableElement = pledgeCard.querySelector(".available");
+
+      if (availableElement) {
+        //if it's not the first card which isn't tracked
+        const available = availableElement.innerText.split(" ")[0] - 1 || 0;
+
+        const index =
+          Array.from(backModal.querySelectorAll(".card")).indexOf(pledgeCard) -
+          1; // get the index of the pledge
+
+        const homeCard = document.querySelectorAll(".selection")[index]; // the pledge in the home page
+        homeCard.querySelector(
+          ".available"
+        ).innerHTML = `${available} <span> left<span>`; // edit the available at home
+      }
+
       // close the main modal
       mainModalToggle();
 
@@ -134,12 +153,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       let selection = Array.from(selectRewardButton).indexOf(pledge) + 1; // the position of the clicked pledge
 
-      mainModalToggle(selection);
-
       if (available == 0) e.preventDefault();
+      //if the option is out
       else {
-        availableNumber.innerHTML = `${available - 1}<span> left<span>`;
-        // successToggle();
+        mainModalToggle(selection);
       }
     });
   });
