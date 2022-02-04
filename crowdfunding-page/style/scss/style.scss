@@ -243,6 +243,18 @@ section {
     background: $moderate-cyan;
     border-radius: 1.5em;
   }
+
+  .completed {
+    opacity: 0.5;
+
+    .check {
+      pointer-events: none;
+    }
+
+    a {
+      background: $faint-black;
+    }
+  }
 }
 
 .modalContent {
@@ -379,7 +391,7 @@ section {
   }
   .modalContent {
     margin-top: 40%;
-    height: 50%;
+    height: 45%;
     border-radius: 7px;
 
     h3,
@@ -387,8 +399,15 @@ section {
       text-align: center;
     }
 
-    a {
+    a,
+    .done {
+      height: 3em;
       width: 35%;
+      background-color: $moderate-cyan;
+      padding: 0.7em;
+      border-radius: 1.5em;
+      color: white;
+      font-weight: 500;
     }
   }
 }

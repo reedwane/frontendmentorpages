@@ -232,6 +232,18 @@ section {
   background: #3cb4ac;
   border-radius: 1.5em;
 }
+.about .completed,
+.modalContent .completed {
+  opacity: 0.5;
+}
+.about .completed .check,
+.modalContent .completed .check {
+  pointer-events: none;
+}
+.about .completed a,
+.modalContent .completed a {
+  background: rgba(0, 0, 0, 0.1);
+}
 
 .modalContent {
   background-color: white;
@@ -342,15 +354,22 @@ section {
 }
 .successModal .modalContent {
   margin-top: 40%;
-  height: 50%;
+  height: 45%;
   border-radius: 7px;
 }
 .successModal .modalContent h3,
 .successModal .modalContent p {
   text-align: center;
 }
-.successModal .modalContent a {
+.successModal .modalContent a,
+.successModal .modalContent .done {
+  height: 3em;
   width: 35%;
+  background-color: #3cb4ac;
+  padding: 0.7em;
+  border-radius: 1.5em;
+  color: white;
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=style.css.map */

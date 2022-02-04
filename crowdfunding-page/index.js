@@ -1,9 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
   const burger = document.querySelector("#hamburger");
   const navlist = document.querySelector("nav ul");
+  const selectRewardButton = document.querySelectorAll(".about a");
+
+  const backModal = document.querySelector(".backerModal"); // the modal for the selections
 
   const openIcon = "./images/icon-hamburger.svg";
   const closeIcon = "./images/icon-close-menu.svg";
+
+  // const faintBlack = "rgba(0, 0, 0, 0.1)";
 
   const navToggle = () => {
     const src = burger.getAttribute("src");
@@ -16,9 +21,40 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("nav .modal").classList.toggle("modal-open"); //toggle the modal
   };
 
-  const mainModalToggle = () => {
+  const mainModalToggle = (selection) => {
     backModal.classList.toggle("modal-open");
     backModal.classList.toggle("close");
+    let availableArray = [];
+
+    const availables = Array.from(
+      document.querySelectorAll(".about .available")
+    );
+    // the array of the available units of pledges
+    for (let item of availables)
+      availableArray.push(item.innerText.split(" ")[0]);
+
+    const edits = Array.from(backModal.querySelectorAll(".available")); //the number available showing on the modal
+    edits.forEach((pledge) => {
+      const figure = availableArray[edits.indexOf(pledge)];
+      // put the respective numbers from the home page
+      pledge.innerHTML = `${figure} <span> left<span>`;
+
+      if (figure == 0) pledge.parentNode.classList.add("completed"); //disable selection if number is complete
+
+      if (selection) {
+        // if a pledge was clicked from the home page
+        backModal.querySelectorAll(".card").forEach((card) => {
+          card.classList.remove("checked"); // cancel other selection
+        });
+        backModal.querySelectorAll(".card")[selection].classList.add("checked"); // preselect the pledge in the modal
+        backModal.scrollTo(0, selection * 350); // scroll to the pledge in the modal
+      }
+    });
+  };
+
+  const successToggle = () => {
+    document.querySelector(".successModal").classList.toggle("modal-open");
+    document.querySelector(".successModal").classList.toggle("close");
   };
 
   // toggling the nav menu on mobile
@@ -44,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // back this project modal functionality
-  const backModal = document.querySelector(".backerModal");
+
   document.querySelector(".back").addEventListener("click", (e) => {
     mainModalToggle();
   });
@@ -80,8 +116,31 @@ document.addEventListener("DOMContentLoaded", () => {
       mainModalToggle();
 
       //show the success modal
-      document.querySelector(".successModal").classList.toggle("modal-open");
-      document.querySelector(".successModal").classList.toggle("close");
+      successToggle();
+    });
+  });
+
+  // closing the success modal when 'Got it' is pressed
+  document.querySelector(".done").addEventListener("click", (e) => {
+    successToggle();
+  });
+
+  // displaying the success modal when a pledge is made from the page without the modal
+  selectRewardButton.forEach((pledge) => {
+    pledge.addEventListener("click", (e) => {
+      const card = pledge.parentNode; // the pledge div
+      const availableNumber = card.querySelector(".available"); // the p element inidcating the available
+      const available = availableNumber.innerText.split(" ")[0];
+
+      let selection = Array.from(selectRewardButton).indexOf(pledge) + 1; // the position of the clicked pledge
+
+      mainModalToggle(selection);
+
+      if (available == 0) e.preventDefault();
+      else {
+        availableNumber.innerHTML = `${available - 1}<span> left<span>`;
+        // successToggle();
+      }
     });
   });
 });
