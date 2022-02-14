@@ -2,11 +2,35 @@
 * {
   border: 0;
   box-sizing: border-box;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   text-align: center;
   font-family: "Commissioner", sans-serif;
   font-weight: 400;
+}
+
+@media screen and (min-width: 450px) {
+  main,
+.modal-open {
+    padding: 0 10%;
+  }
+}
+@media screen and (min-width: 768px) {
+  main,
+.modal-open {
+    padding: 0 15%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main,
+.modal-open {
+    padding: 0 20%;
+  }
+}
+
+main {
+  background: #fffdfd;
+  max-width: 1440px;
 }
 
 .close {
@@ -27,6 +51,7 @@
 header {
   background: black url("../../images/image-hero-mobile.jpg") center center/cover no-repeat;
   height: 20em;
+  max-width: 1440px;
 }
 header .icons {
   width: 100%;
@@ -38,6 +63,17 @@ header .icons {
   align-items: center;
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.3);
+}
+@media screen and (min-width: 768px) {
+  header .icons {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+  header .icons #hamburger {
+    display: none;
+  }
 }
 header ul {
   list-style: none;
@@ -55,20 +91,61 @@ header ul li {
   font-weight: 500;
   height: 2.8em;
   padding: 0.8em;
+  cursor: pointer;
 }
 header ul li:nth-of-type(2) {
   border-top: 0.5px solid rgba(0, 0, 0, 0.3);
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
+}
+@media screen and (min-width: 768px) {
+  header ul li:nth-of-type(2) {
+    border: none;
+  }
 }
 header ul li a {
   color: black;
   font-size: 1.3rem;
   font-weight: 500;
 }
+@media screen and (min-width: 768px) {
+  header {
+    background: black url("../../images/image-hero-desktop.jpg") center center/cover no-repeat;
+    height: 25em;
+  }
+  header nav {
+    display: grid;
+    grid-template-columns: 67% auto;
+    width: 100%;
+    padding: 3% 5% 0 10%;
+  }
+  header .icons {
+    width: fit-content;
+    align-self: center;
+  }
+  header .modal,
+header .close {
+    display: inline-block;
+  }
+  header ul {
+    margin: 0;
+    padding: 0;
+    width: fit-content;
+    display: inline-block;
+    background: none;
+  }
+  header ul li {
+    display: inline-block;
+    color: white;
+  }
+  header ul li a {
+    color: white;
+  }
+}
 
 a {
   text-decoration: none;
   display: inline-block;
+  cursor: pointer;
 }
 
 h1 {
@@ -88,13 +165,24 @@ section {
   border-radius: 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   background-color: white;
+  position: relative;
+  top: -3em;
+}
+@media screen and (min-width: 768px) {
+  section {
+    top: -5em;
+  }
 }
 
-#mastercraftLogo,
-.intro {
+#mastercraftLogo {
   display: inline-block;
   position: relative;
   top: -3em;
+}
+@media screen and (min-width: 768px) {
+  #mastercraftLogo {
+    top: -5em;
+  }
 }
 
 .intro .large {
@@ -116,6 +204,40 @@ section {
   padding: 0.7em;
   background-color: #3cb4ac;
 }
+.intro .links .back:hover {
+  background: #147b74;
+}
+@media screen and (min-width: 768px) {
+  .intro .links .back {
+    width: 30%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .intro .links .bookmark {
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    min-width: fit-content;
+    width: 25%;
+    height: fit-content;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 2em;
+  }
+  .intro .links .bookmark:visited {
+    color: #3cb4ac;
+  }
+  .intro .links img {
+    display: inline-block;
+    position: relative;
+  }
+  .intro .links .large {
+    display: inline-block;
+    padding: 0.7em;
+    font-weight: 500;
+    text-align: right;
+  }
+}
 
 .progress {
   padding: 8%;
@@ -132,6 +254,11 @@ section {
   bottom: 0;
   left: 5em;
 }
+@media screen and (min-width: 768px) {
+  .progress p:nth-of-type(1):after {
+    display: none;
+  }
+}
 .progress p:nth-of-type(2):after {
   content: "";
   display: block;
@@ -143,6 +270,11 @@ section {
   right: 0;
   bottom: 0;
   left: 5em;
+}
+@media screen and (min-width: 768px) {
+  .progress p:nth-of-type(2):after {
+    display: none;
+  }
 }
 .progress p span {
   display: block;
@@ -162,11 +294,49 @@ section {
   position: absolute;
   display: inline-block;
   left: 0;
-  width: calc(var(--width, 89.9) * 1%);
+  width: calc(var(--width, 72) * 1%);
   max-width: 100%;
   height: 100%;
   border-radius: 10px;
   background: #3cb4ac;
+}
+@media screen and (min-width: 768px) {
+  .progress {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 5em auto;
+    row-gap: 2em;
+  }
+  .progress p {
+    display: inline-block;
+  }
+  .progress p:nth-of-type(2):after {
+    content: "";
+    display: block;
+    position: relative;
+    width: 0.1em;
+    height: 4em;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: -4em;
+    right: 0;
+    bottom: 0;
+    left: -30%;
+  }
+  .progress p:nth-of-type(3):after {
+    content: "";
+    display: block;
+    position: relative;
+    width: 0.1em;
+    height: 4em;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: -3.8em;
+    right: 0;
+    bottom: 0;
+    left: -30%;
+  }
+  .progress .progress-bar {
+    grid-column: 1/span 3;
+  }
 }
 
 .about,
@@ -183,6 +353,11 @@ section {
 .modalContent .available {
   text-align: left;
   font-weight: 700;
+}
+.about h3:hover,
+.modalContent h3:hover {
+  color: #3cb4ac;
+  cursor: pointer;
 }
 .about h2,
 .modalContent h2 {
@@ -232,6 +407,10 @@ section {
   background: #3cb4ac;
   border-radius: 1.5em;
 }
+.about a:hover,
+.modalContent a:hover {
+  background: #147b74;
+}
 .about .completed,
 .modalContent .completed {
   opacity: 0.5;
@@ -244,6 +423,45 @@ section {
 .modalContent .completed a {
   background: rgba(0, 0, 0, 0.1);
 }
+@media screen and (min-width: 768px) {
+  .about div,
+.modalContent div {
+    padding: 7%;
+  }
+  .about h3,
+.modalContent h3 {
+    display: inline-block;
+    width: 30%;
+  }
+  .about h3:hover,
+.modalContent h3:hover {
+    color: #3cb4ac;
+  }
+  .about h3:first-of-type,
+.modalContent h3:first-of-type {
+    margin: 0;
+    width: 80%;
+  }
+  .about .amount,
+.modalContent .amount {
+    position: relative;
+    right: 0;
+    text-align: right;
+    width: 65%;
+  }
+  .about .available,
+.modalContent .available {
+    display: inline-block;
+    width: 68%;
+    margin: 0;
+    position: relative;
+    top: 0.3em;
+  }
+  .about a,
+.modalContent a {
+    width: 30%;
+  }
+}
 
 .modalContent {
   background-color: white;
@@ -251,8 +469,29 @@ section {
   margin: 20% auto;
   height: fit-content;
   width: 90%;
+  max-width: 700px;
   border-radius: 15px;
   padding: 5% 0 5%;
+}
+@media screen and (min-width: 768px) {
+  .modalContent div {
+    padding: 3%;
+    display: grid;
+    grid-template-columns: 80% auto;
+    grid-template-rows: auto auto;
+  }
+  .modalContent div .available {
+    grid-row: 1/span 1;
+    grid-column: 2/span 1;
+    top: -0.2em;
+    font-size: 1.5rem;
+  }
+  .modalContent div .available span {
+    top: -0.2em;
+  }
+  .modalContent div p {
+    grid-column: 1/span 2;
+  }
 }
 
 .backerModal .modal-heading {
@@ -292,6 +531,24 @@ section {
 .backerModal .modalContent .title .amount {
   text-align: left;
 }
+@media screen and (min-width: 768px) {
+  .backerModal .modalContent .title {
+    display: inline-block;
+  }
+  .backerModal .modalContent .title h3 {
+    margin-left: 2em;
+    width: fit-content;
+    align-self: center;
+    top: -0.5em;
+    position: relative;
+  }
+  .backerModal .modalContent .title .amount {
+    margin-left: 2em;
+    width: fit-content;
+    top: -0.5em;
+    position: relative;
+  }
+}
 .backerModal .modalContent .confirm {
   display: none;
   box-shadow: none;
@@ -306,6 +563,12 @@ section {
   height: 0.2em;
   display: inline-block;
   background-color: rgba(0, 0, 0, 0.1);
+}
+@media screen and (min-width: 768px) {
+  .backerModal .modalContent .confirm::before {
+    margin-left: 3%;
+    width: 100%;
+  }
 }
 .backerModal .modalContent .confirm p {
   text-align: center;
@@ -329,6 +592,22 @@ section {
 .backerModal .modalContent .confirm a {
   font-size: 0.8rem;
   width: 45%;
+}
+@media screen and (min-width: 768px) {
+  .backerModal .modalContent .confirm {
+    grid-column: 1/span 2;
+  }
+  .backerModal .modalContent .confirm p {
+    display: inline-block;
+    margin-right: 30%;
+  }
+  .backerModal .modalContent .confirm .price {
+    width: 20%;
+    margin-right: 3%;
+  }
+  .backerModal .modalContent .confirm a {
+    width: 20%;
+  }
 }
 .backerModal .modalContent .checked {
   box-shadow: none;
@@ -354,7 +633,8 @@ section {
 }
 .successModal .modalContent {
   margin-top: 40%;
-  height: 45%;
+  min-height: fit-content;
+  min-height: 45%;
   border-radius: 7px;
 }
 .successModal .modalContent h3,
@@ -370,6 +650,35 @@ section {
   border-radius: 1.5em;
   color: white;
   font-weight: 500;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .successModal .modalContent {
+    width: 60%;
+    padding: 5%;
+  }
+  .successModal .modalContent h3 {
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #147b74;
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

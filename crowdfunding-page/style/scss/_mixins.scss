@@ -9,5 +9,23 @@
   right: $right;
   bottom: $bottom;
   left: $left;
-  //   border: 0.em solid $faint-black;
+}
+
+@mixin verticalBorder($top, $right, $bottom, $left, $width, $height) {
+  content: "";
+  display: block;
+  position: relative;
+  width: $width;
+  height: $height;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin mq($minwidth) {
+  @media screen and (min-width: $minwidth) {
+    @content;
+  }
 }

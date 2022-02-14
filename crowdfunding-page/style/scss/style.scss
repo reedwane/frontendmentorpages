@@ -6,13 +6,29 @@
 * {
   border: 0;
   box-sizing: border-box;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   text-align: center;
   font-family: "Commissioner", sans-serif;
   font-weight: 400;
 }
 
+main,
+.modal-open {
+  @include mq(450px) {
+    padding: 0 10%;
+  }
+  @include mq(768px) {
+    padding: 0 15%;
+  }
+  @include mq(1024px) {
+    padding: 0 20%;
+  }
+}
+main {
+  background: rgb(255, 253, 253);
+  max-width: 1440px;
+}
 // for toggling the mobile nav menu
 .close {
   display: none;
@@ -35,6 +51,7 @@ header {
     center/cover no-repeat;
   // padding: 5%;
   height: 20em;
+  max-width: 1440px;
 
   .icons {
     width: 100%;
@@ -46,6 +63,16 @@ header {
     align-items: center;
     z-index: 2;
     background-color: rgba(0, 0, 0, 0.3);
+
+    @include mq(768px) {
+      display: inline-block;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      #hamburger {
+        display: none;
+      }
+    }
   }
 
   ul {
@@ -64,10 +91,14 @@ header {
       font-weight: 500;
       height: 2.8em;
       padding: 0.8em;
+      cursor: pointer;
 
       &:nth-of-type(2) {
         border-top: 0.5px solid rgba(0, 0, 0, 0.3);
         border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
+        @include mq(768px) {
+          border: none;
+        }
       }
 
       a {
@@ -77,12 +108,52 @@ header {
       }
     }
   }
+
+  // media query
+  @include mq(768px) {
+    background: black url("../../images/image-hero-desktop.jpg") center
+      center/cover no-repeat;
+    height: 25em;
+
+    nav {
+      display: grid;
+      grid-template-columns: 67% auto;
+      width: 100%;
+      padding: 3% 5% 0 10%;
+    }
+
+    .icons {
+      width: fit-content;
+      align-self: center;
+    }
+    .modal,
+    .close {
+      display: inline-block;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      width: fit-content;
+      display: inline-block;
+      background: none;
+
+      li {
+        display: inline-block;
+        color: white;
+
+        a {
+          color: white;
+        }
+      }
+    }
+  }
 }
 
 // main {
 a {
   text-decoration: none;
   display: inline-block;
+  cursor: pointer;
 }
 
 h1 {
@@ -103,14 +174,23 @@ section {
   border-radius: 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   background-color: white;
+  position: relative;
+  top: -3em;
+
+  @include mq(768px) {
+    top: -5em;
+  }
 }
 
 // the icon that is shifted to the top
-#mastercraftLogo,
-.intro {
+#mastercraftLogo {
   display: inline-block;
   position: relative;
   top: -3em;
+
+  @include mq(768px) {
+    top: -5em;
+  }
 }
 
 // intro card stylings
@@ -118,6 +198,10 @@ section {
   //to hide the bookmark text for small screens
   .large {
     display: none;
+
+    //show in larger screens
+    @include mq(768px) {
+    }
   }
 
   .links {
@@ -136,6 +220,47 @@ section {
       border-radius: 2em;
       padding: 0.7em;
       background-color: $moderate-cyan;
+
+      &:hover {
+        background: $dark-cyan;
+      }
+
+      @include mq(768px) {
+        width: 30%;
+      }
+    }
+
+    @include mq(768px) {
+      .bookmark {
+        background: $faint-black;
+        display: flex;
+        flex-wrap: wrap;
+        min-width: fit-content;
+        width: 25%;
+        height: fit-content;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 2em;
+
+        &:visited {
+          color: $moderate-cyan;
+        }
+      }
+
+      img {
+        display: inline-block;
+        position: relative;
+        // left: -10%;
+      }
+
+      .large {
+        display: inline-block;
+        // position: relative;
+        // top: -1.6em;
+        padding: 0.7em;
+        font-weight: 500;
+        text-align: right;
+      }
     }
   }
 }
@@ -146,10 +271,16 @@ section {
   p {
     &:nth-of-type(1):after {
       @include partialborder(0.5em, 0, 0, 5em);
+      @include mq(768px) {
+        display: none;
+      }
     }
 
     &:nth-of-type(2):after {
       @include partialborder(0.5em, 0, 0, 5em);
+      @include mq(768px) {
+        display: none;
+      }
     }
   }
 
@@ -174,12 +305,37 @@ section {
     display: inline-block;
     left: 0;
     width: calc(
-      var(--width, 89.9) * 1%
+      var(--width, 72) * 1%
     ); //the --width variable is created in the html and also defaulted to 89.9
     max-width: 100%;
     height: 100%;
     border-radius: 10px;
     background: $moderate-cyan;
+  }
+
+  @include mq(768px) {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 5em auto;
+    row-gap: 2em;
+
+    p {
+      display: inline-block;
+
+      &:nth-of-type(2):after {
+        @include verticalBorder(-4em, 0, 0, -30%, 0.1em, 4em);
+      }
+
+      &:nth-of-type(3):after {
+        @include verticalBorder(-3.8em, 0, 0, -30%, 0.1em, 4em);
+      }
+    }
+
+    p span {
+    }
+    .progress-bar {
+      grid-column: 1 / span 3;
+    }
   }
 }
 
@@ -194,6 +350,13 @@ section {
   .available {
     text-align: left;
     font-weight: 700;
+  }
+
+  h3 {
+    &:hover {
+      color: $moderate-cyan;
+      cursor: pointer;
+    }
   }
 
   h2 {
@@ -242,6 +405,10 @@ section {
     padding: 0.7em;
     background: $moderate-cyan;
     border-radius: 1.5em;
+
+    &:hover {
+      background: $dark-cyan;
+    }
   }
 
   .completed {
@@ -255,6 +422,42 @@ section {
       background: $faint-black;
     }
   }
+
+  @include mq(768px) {
+    div {
+      padding: 7%;
+    }
+    h3 {
+      display: inline-block;
+      width: 30%;
+
+      &:hover {
+        color: $moderate-cyan;
+      }
+
+      &:first-of-type {
+        margin: 0;
+        width: 80%;
+      }
+    }
+    .amount {
+      position: relative;
+      right: 0;
+      text-align: right;
+      width: 65%;
+    }
+
+    .available {
+      display: inline-block;
+      width: 68%;
+      margin: 0;
+      position: relative;
+      top: 0.3em;
+    }
+    a {
+      width: 30%;
+    }
+  }
 }
 
 .modalContent {
@@ -263,8 +466,32 @@ section {
   margin: 20% auto;
   height: fit-content;
   width: 90%;
+  max-width: 700px;
   border-radius: 15px;
   padding: 5% 0 5%;
+
+  div {
+    @include mq(768px) {
+      padding: 3%;
+      display: grid;
+      grid-template-columns: 80% auto;
+      grid-template-rows: auto auto;
+
+      .available {
+        grid-row: 1 / span 1;
+        grid-column: 2 / span 1;
+        top: -0.2em;
+        font-size: 1.5rem;
+
+        span {
+          top: -0.2em;
+        }
+      }
+      p {
+        grid-column: 1 / span 2;
+      }
+    }
+  }
 }
 
 // the modal from 'back this project'
@@ -310,6 +537,24 @@ section {
       .amount {
         text-align: left;
       }
+
+      @include mq(768px) {
+        display: inline-block;
+
+        h3 {
+          margin-left: 2em;
+          width: fit-content;
+          align-self: center;
+          top: -0.5em;
+          position: relative;
+        }
+        .amount {
+          margin-left: 2em;
+          width: fit-content;
+          top: -0.5em;
+          position: relative;
+        }
+      }
     }
 
     // hide the confirmation message
@@ -322,6 +567,11 @@ section {
         height: 0.2em;
         display: inline-block;
         background-color: $faint-black;
+
+        @include mq(768px) {
+          margin-left: 3%;
+          width: 100%;
+        }
       }
 
       display: none;
@@ -355,6 +605,23 @@ section {
       a {
         font-size: 0.8rem;
         width: 45%;
+      }
+
+      @include mq(768px) {
+        grid-column: 1 / span 2;
+        p {
+          display: inline-block;
+          margin-right: 30%;
+        }
+
+        .price {
+          width: 20%;
+          margin-right: 3%;
+        }
+
+        a {
+          width: 20%;
+        }
       }
     }
 
@@ -391,7 +658,8 @@ section {
   }
   .modalContent {
     margin-top: 40%;
-    height: 45%;
+    min-height: fit-content;
+    min-height: 45%;
     border-radius: 7px;
 
     h3,
@@ -408,7 +676,36 @@ section {
       border-radius: 1.5em;
       color: white;
       font-weight: 500;
+      cursor: pointer;
+    }
+
+    @include mq(768px) {
+      width: 60%;
+      padding: 5%;
+
+      h3 {
+        width: 100%;
+        text-align: center;
+        display: block;
+      }
     }
   }
 }
 // }
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $dark-cyan;
+  border-radius: 10px;
+}

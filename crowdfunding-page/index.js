@@ -9,7 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const openIcon = "./images/icon-hamburger.svg";
   const closeIcon = "./images/icon-close-menu.svg";
 
-  // const faintBlack = "rgba(0, 0, 0, 0.1)";
+  // to format number to USD currency
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 0,
+  });
 
   const navToggle = () => {
     const src = burger.getAttribute("src");
@@ -60,28 +65,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // toggling the nav menu on mobile
   burger.addEventListener("click", (e) => {
-    navToggle();
+    if (window.visualViewport.width < 768) {
+      navToggle();
+    }
   });
 
   // toggle the nav menu when a link from the nav is clicked
   document.querySelectorAll("nav a").forEach((link) => {
     link.addEventListener("click", (e) => {
-      navToggle();
+      // if not on mobile or tablet device
+      if (window.visualViewport.width < 768) {
+        navToggle();
+      }
     });
   });
 
-  // progress bar functionality
-  const progressBar = document.getElementsByClassName("progress-bar")[0];
-  progressBar.addEventListener("click", (e) => {
-    const computedStyle = getComputedStyle(progressBar);
-    const width = parseFloat(computedStyle.getPropertyValue("--width")) || 0;
-
-    console.log(width);
-    progressBar.style.setProperty("--width", width + 1);
+  // changing the bookmark button text when clicked
+  const bookmark = document.querySelectorAll(".large")[0];
+  bookmark.addEventListener("click", (e) => {
+    bookmark.innerText = "Bookmarked";
   });
 
-  // back this project modal functionality
+  // progress bar functionality
+  // const progressBar = document.getElementsByClassName("progress-bar")[0];
+  // progressBar.addEventListener("click", (e) => {
+  //   const computedStyle = getComputedStyle(progressBar);
+  //   const width = parseFloat(computedStyle.getPropertyValue("--width")) || 0;
 
+  //   console.log(width);
+  //   progressBar.style.setProperty("--width", width + 1);
+  // });
+
+  // back this project modal functionality
   document.querySelector(".back").addEventListener("click", (e) => {
     mainModalToggle();
   });
@@ -89,12 +104,25 @@ document.addEventListener("DOMContentLoaded", () => {
   // show the modal if "Get started" is clicked from the nav
   document.querySelector("#start").addEventListener("click", (e) => {
     mainModalToggle();
-    navToggle();
+    if (window.visualViewport.width < 768) {
+      navToggle();
+    }
   });
 
   // closing the modal if the close icon is pressed
   document.querySelector(".closeModal").addEventListener("click", (e) => {
     mainModalToggle();
+  });
+
+  // simulating click on radio when header is clicked
+  document.querySelectorAll(".card h3").forEach((heading) => {
+    heading.addEventListener("click", (e) => {
+      //if the pledge is not out
+      if (!heading.parentNode.parentNode.classList.contains("completed")) {
+        const radio = e.target.parentNode.querySelector(".check");
+        radio.click(); // simulate a click event on the associated radio
+      }
+    });
   });
 
   // selecting a pledge from the modal
@@ -115,10 +143,14 @@ document.addEventListener("DOMContentLoaded", () => {
     submit.addEventListener("click", (e) => {
       const pledgeCard = e.target.parentNode.parentNode; // grab the pledge
 
+      const amount = Number(
+        e.target.parentNode.querySelectorAll(".price")[0].innerText // the associated pledge amount
+      );
+
       const availableElement = pledgeCard.querySelector(".available");
 
+      //if it's not the first card which isn't tracked
       if (availableElement) {
-        //if it's not the first card which isn't tracked
         const available = availableElement.innerText.split(" ")[0] - 1 || 0;
 
         const index =
@@ -129,7 +161,28 @@ document.addEventListener("DOMContentLoaded", () => {
         homeCard.querySelector(
           ".available"
         ).innerHTML = `${available} <span> left<span>`; // edit the available at home
+
+        // update the amount raised
+        const raised = Number(
+          document
+            .querySelectorAll(".raised")[0]
+            .innerText.replace(/[^0-9.-]+/g, "") //convert to number and remove non-numeric
+        );
+
+        document.querySelectorAll(".raised")[0].innerText = `${
+          formatter.format(raised + amount) //add the new pledge amount to the raised total
+        }`;
       }
+
+      // increment the total backers
+      const backers = Number(
+        document
+          .querySelectorAll(".backers")[0]
+          .innerText.replace(/[^0-9.-]+/g, "")
+      );
+      document.querySelectorAll(
+        ".backers"
+      )[0].innerText = `${new Intl.NumberFormat("en-US").format(backers + 1)}`;
 
       // close the main modal
       mainModalToggle();
